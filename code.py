@@ -137,6 +137,8 @@ above log will come --> verify the details and click enter--> open the url <URL:
 
 Now clone the repo it will not ask for any authentication it will clone the repo successfully
 
+updated
+
 
 
 
