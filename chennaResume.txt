@@ -1,0 +1,74 @@
+Name: D.Chennaiah 
+Location: Hyderabad Ph.No : 
+9652380483
+ CAREER OBJECTIVE
+ Good analytical and problem-solving skill with friendly in nature, jovial and flexible person to all kind of 
+situation and good adopting capability and good understanding skill with fast learning ability.
+ . Working in HCL Technologies as Software Engineer [MAR’2021 to till date]
+ . Hands on experience in validating the firmware on SSD’s like NVMe product on different platforms.
+ . Excellent analytical, interpersonal and communications skills and demonstrated ability in achieving 
+project milestones and objectives accurately on time.
+ Programming Languages
+ Products
+ Tools
+ Python
+ NVME, SSD validation.
+ Jenkins, JIRA, Customer Specific tools (TWIDL and
+ FAST), Eclipse.
+ Operating Systems
+ Code Management Tool
+ Linux & Windows.
+ Bit bucket, Git and GitHub.
+ Project on SSD Firmware Test Automation Validation over NVMe:
+ ➢ Role
+ ➢ Client
+ : SSD Validation Engineer.
+ : INTEL
+ ➢ Project Name : SSD FW Validation.
+ ➢ Environments : Windows, Linux.
+ ➢ Protocols
+ : NVMe
+ ➢ Duration
+ Execution Team 
+Description:
+ : From March’2021 till now.
+ • NVMe protocols are the latest storage protocol which uses voltage changes to store data on 
+the Non-volatile memory (Solid State Drives).
+ • The main objective to validate the firmware on SSD’s like NVMe product on different 
+platforms.
+ • Making sure to setup the Infra/hardware ready as per the BKC provided and keeping the test 
+bed ready for testing.
+ • Worked on Optane and NVME compatibility of different products.
+• Hands on experience on hardware related issues and setting up racks and servers for 
+Performance and internal Programs and also installing driver and OS from the scratch.
+ • Test bed configuration of standard and special capability testing like PITA, Quarch, Aardvark, 
+UART, NVMe, Power PPT, Hot plug and so on.
+ • Testing functional features like Firmware upgrade and downgrade test, power cycle test- 
+cases
+ • The test scope coverage is to validate FW on all SSD developed by the customer across the 
+different platforms.
+ • Our main motto to complete the run & triage with- in 24Hours (1 Day) Only.
+ • Effective communication with onsite team so that we can co-ordinate and make the systems 
+available remotely.
+ • Used to debug OS issues and resolve and BSOD’s or any driver related issues remotely 
+without the need for physical intervention.
+ Responsibilities
+ • Once Firmware build got released from customers, based on that we should analyse those 
+customer requirements, Prepare the Plan and then start the execution.
+ • Need to make sure all the setup is kept ready and see that there are no issues related to 
+hardware setup.
+ • Need to debug the infra related issues and any environmental issues due to hardware and 
+script as well and make sure no wrong tickets have been filed by reducing the time for the 
+developers.
+ • Making sure any OS related issues are resolved remotely and if not possible trying to update 
+the OS remotely or taking the help of the team readily available.
+ • Every build has derived test plan on that we setup the machines & prepare the clients with 
+updated FW, BL, LS Files then start the execution.
+ • If found unexpected behaviour of test-case, should analyse and debug the issue and raise the 
+JIRA
+ accordingly.
+ • Experience in Defect Management Tool JIRA.
+ • Preparing Daily and Weekly status reports to RM and Customers.
+ DECLARATION
+ I hereby declare that the above cited information is true to the best of my knowledge and belief, if given a 
+chance, I can prove myself.
