@@ -1171,6 +1171,7 @@ https://nsg-jira.intel.com/browse/NSGSE-220106 - unsafe repository(OS reimage)
 
 https://nsg-jira.intel.com/browse/MBE-81455 - presighting (KP)
 https://nsg-jira.intel.com/browse/MBE-75167 - Presight (Cha)
+https://nsg-jira.intel.com/browse/MBE-75167 - Presight (Cha)
 
 The host was idle for more than a week and later reported test got failed.
 
