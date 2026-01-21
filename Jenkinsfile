@@ -6,15 +6,20 @@ pipeline {
                 git url: 'https://github.com/dchennax423/github2.git', branch: 'master'
             }
         }
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Build started'
+                sh 'pip install -r requirements.txt || true'
             }
         }
-        stage('Test') {
+        stage('Run Tests') {
             steps {
-                echo 'Tests executed successfully'
+                sh 'python -m unittest discover -s tests'
             }
+        }
+    }
+    post {
+        always {
+            echo 'Build finished'
         }
     }
 }
