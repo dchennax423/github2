@@ -1,0 +1,4042 @@
+any new dummy branch creation:
+
+download the ent_ssd repo and give the git pull and give the command : git checkout -b test/auto_triage
+                                                                     |---> whatever u need 
+
+
+
+https://replit.com/@chennaiah423423/first-day-od-code#main.py
+https://app.codingrooms.com/management/courses/6387/classes/8480/assignments
+
+for checking IP address in Windows : ipconfig
+
+10.145.66.205	Ubuntu-Jenkins ADSSP
+10.145.66.206	Ubuntu-ADSSP-NFS
+
+
+windows means:(checking PITA functinality)
+
+Go to Command prompt -> Type Python -i -m pita -> It will return "COM3 is in port0" -> Select 0 -> it wwill create pObj. -> Type pObj.readBoardId() -> it will return Fw revision mans it is working bro
+ 
+*Failure instance on WW47.3*
+*Failure link:*
+*Logs:*
+*FW Changesets:*
+{code}
+
+{code}
+*APL Changesets:*
+{code}
+
+{code}
+*Failure snippet:*
+{code}
+
+{code}
+*Dmesg logs:*
+{code}
+
+{code}
+
+token password:
+
+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
+
+sudo touch <your text file name.txt> ( to convert txt file)
+
+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
+
+CSDP:  kmarlapx, charumax, gandhi2x, dprudhix, dchennax, palemvix
+
+CSDP:bjdonie, charumax, dchennax, dprudhix, kmarlapx, sdalvi, gandhi2x, palemvix,
+
+----> sudo touch <your text file name.txt>   ( fot text file command)
+
+--->Tidbits and Hostownership tool Document link :
+    
+   https://nsg-wiki.intel.com/display/SVC/Continuous+Validation+202+-+Tidbits#ContinuousValidation202-Tidbits-HostOwnershipTool
+
+------> Tidbits page link : https://tidbits.intel.com/
+
+---->Dirty client managment link:
+
+    https://nsg-wiki.intel.com/display/CVD/Dirty+Clients+Management
+
+-----> IPMI for power off/oN password:ADMIN, username:ADMIN
+
+----->Jenkins password:pass!Q@W#E
+              username:jenkins
+
+----->Remote desktop connetion Password:1001SMT!
+                               username:./remlab
+
+------>CI pools monitoring Links:
+
+       http://drax-0.fm.intel.com:8080/label/CI_CS_DP_DRIVE/
+
+       http://drax-0.fm.intel.com:8080/label/CI_CDR_DP_DRIVE/
+
+       http://drax-0.fm.intel.com:8080/label/CI_CDR_DRIVE/
+
+       http://drax-0.fm.intel.com:8080/label/CI_CDRVE_DRIVE/
+
+----->Pool healthy recovery link: for csdp
+     
+     http://drax-0.fm.intel.com:8080/view/ADMIN/view/TRIAGE/job/Report_Daily_Pool_Health/
+
+for CDRDP -- http://10.208.33.100:8080/job/Report_Daily_Pool_Health/
+
+------>Different customers in client:
+
+      http://drax-0.fm.intel.com:8080/label/IBM_CS_DP/
+
+      http://drax-0.fm.intel.com:8080/label/GENERIC_CS_DP/
+
+      http://drax-0.fm.intel.com:8080/label/MRES_CS_DP/
+
+      http://drax-0.fm.intel.com:8080/label/HITACHI_CS_DP/
+
+------> Raritan page link , open in microsoft edge not in chrome : 
+
+
+------>collect logs for using below links:
+
+sudo dmesg -T>>dmesg_T_A08_13_WW47_2.txt
+sudo dmesg -H>>dmesg_H_A08_13_WW47_2.txt 
+sudo nvme telemetry-log /dev/nvme0n1 -o telemetry_nvme0n1_A08_13_WW47_2.bin
+sudo nvme telemetry-log /dev/nvme1n1 -o telemetry_nvme1n1_A08_13_WW47_2.bin
+
+*Failure Link:*
+*Logs:*
+Could not collect other logs as different tests attempted
+
+*FW Changesets:*
+{code}
+
+{code}
+*APL Changesets:*
+{code}
+
+{code}
+*Failure snippet:*
+{code}
+ 
+{code}
+*SPDK details log:*
+{code}
+
+{code}
+*Dmesg Snippet*
+{code}
+
+{code}
+
+
+---> dmesg logs->System logs,  Telemetry-Drive related logs
+
+----->Recover system from a test failure:
+
+     1. Disconnected by SYSTEM : Found .*Post Switch Health Check Failed.* - this type of failer will be happend
+
+      Ans: Collect logs and release only in healthy dual port state.
+     
+     2. this node is offline beacuse of previous test failure - this type of failer will be happend
+
+     Ans: Collect logs and release only in healthy dual port state.
+
+     3. Disconnected by sys_nsgjkagt- this type of failer will be happend : 
+
+      Ans:Check and release if healthy with dual port, this type of messages we can find
+                       
+     4. Disconnected by user: this type of failer will be happend
+
+      Ans: Check with the person who reserved the system and get it released once debug is done.
+
+     5. This agent is offline because Jenkins failed to launch the agent process on it - this type of failer will be happend
+
+      Ans:Possible network issue. try to do IPMI, if still not up please check physically in lab. 
+
+----> For change old host name to new host name by using below commands:
+
+      sudo nano /etc/hostname
+
+      sudo nano /etc/hosts
+
+      sudo reboot
+
+----> copy and make directory:(twidl copy to home/jenkins)
+
+-       sudo mkdir /mnt/drax-0-share 
+        sudo mkdir /mnt/drax-csdp-share 
+
+ csdp - sudo mount drax-0.fm.intel.com:/var/nfs/share /mnt/drax-0-share
+csdp  - sudo mount 10.145.66.202:/var/nfs/share /mnt/drax-csdp-share
+cdrdp - sudo mount 10.208.33.101:/var/nfs/share /mnt/drax-5-share
+
+        cd  /mnt/drax-0-share  or cd /mnt/drax-csdp-share 
+
+        ls
+
+        sudo cp -r twidl_executable /home/jenkins
+
+        cd
+
+        ls
+
+----> next we need to check whether dual port devices detected or not:
+
+     sudo vim /etc/default/grub
+     Modified the line from GRUB_CMDLINE_LINUX=”” to (first click on insert then type “nvme_core.multipath=0) 
+     then click on esc then type :wq! Then go to sudo update-grub finally give sudo reboot.
+
+     Then check whether data enumerated or not
+
+----> Twidl commands:
+
+       1. sudo modprobe nvme
+
+       2.sudo nvme list( to check for drive enumurate or not)
+
+       3.sudo ./twidl_executable
+
+       4. unlock()
+       
+       5. exit()
+
+----> Triage report link-
+
+          http://drax-0.fm.intel.com:8080/view/ADMIN/view/TRIAGE/job/TRIAGE_Daily_Report/
+
+
+----> Bit bucket link-
+
+          https://nsg-bit.intel.com/dashboard
+
+-----> Json update
+       
+        1. when u create a new JIRA - u ll add it in json
+        2.when a jira( pre-sighting/ story) is closed - we will remove it from json
+
+---->cloning for ent_ssd_test repo by using below link
+ 
+        git clone ssh://git@nsg-bit.intel.com:7999/ise/ent_ssd_test.git
+
+---> for assigning our name in json configuration-
+
+      git config --global user.name"dchennax"
+      git config --global user.mail"dirasavancha.chennaiah@intel.com"
+
+
+----> Jira link-https://nsg-jira.intel.com/browse/MBE-39471
+
+----> Git information:
+
+      Unusual is that branching/mergeing are not used with this signature file – all updates are done to the tip of the master branch. 
+      This means that everyone is working on and updating the same branch and version of the file and there is a much higher risk of concurrent updates.  
+      To minimize this potential the following is the recommended update sequence BKM:
+
+      Git pull – get the latest version of the repository and signature file
+      Update and test the signature file as per process described later in this document
+      Git stash push – save your signature update(s)
+      Git pull – just in case anyone has done an update while you worked
+      Git stash pop – re-add your signature update(s)
+      Git commit – commit your updates into your local repository
+      Git push – publish your updates to the central server and rest of the team
+      Note that steps 4-7 should be performed all together at one time without interruption
+
+---->Triage information link:-
+
+       https://nsg-wiki.intel.com/display/BHB/Triage+Training+Process#_Toc56688610
+
+---->consistency wiki link->  https://nsg-wiki.intel.com/pages/viewpage.action?pageId=178338734
+
+---->machine/drive allocation wiki link->   https://nsg-wiki.intel.com/pages/viewpage.action?pageId=160046314
+
+
+----->  https://nsg-bit.intel.com/projects/ISE/repos/alpinedp/commits-  go to commits and check with APL branch also
+                           |
+         before go to check the csdp fw and cdrdp fw use this link(For find the APL fw update whether in csdp and cdrdp)
+
+         
+        https://nsg-bit.intel.com/projects/ISE/repos/alpinedp/commits?merges=include--Apl 
+ 
+         https://nsg-bit.intel.com/projects/FSEDEV/repos/mansionbeach/commits -csdp fw- backend
+
+         
+         https://nsg-bit.intel.com/projects/FSEDEV/repos/cliffdalerefreshlb/commits -> cdrdp_fw------>backend
+
+
+----> Wiki information link(all updated information):
+
+          https://nsg-wiki.intel.com/
+
+
+-----> For json update
+
+           jenkins_utils/triage -> json files will b 
+​
+           ent_ssd_test/utils/pyutile -> py file for parsing
+
+           ./jenkins_triage_sig_checker.py --sigFileAbsPath /home/jenkins/jenkins_utils/triage/signature_apldp.json --consoleLogFile 1.txt
+
+           git add filename
+
+-----> wiki query-
+ project in ("Mansion Beach", "NSG System Engineering") AND issuetype in (Sighting) AND status changed from "In Triage" during ("2021/05/27", "2021/07/14") 
+ by (sathis3x, lgnanasx, vijaysux, ppatchax, knalla1x, aparna2x, dbondilx, pandia1x, sujeesmx, kmarlapx, charumax, vchaitax, mkankanx, 
+ gregantx, vincevax, bjdonie, sdalvi) AND "Suspected Problem Area" in (FW, Lightswitch, "3rd Party IP") AND status = Open
+
+-----> triage checker command. 
+           /jenkins_triage_sig_checker.py --sigFileAbsPath /home/jenkins/jenkins_utils/triage/signature_apldp.json --consoleLogFile 1.txt
+
+------>  That same thing we need to reflect in repositories by using below commands.
+
+       git add signature test. json or signature apldp. json
+
+       git commit -m” Triage_WW40.4”
+
+       git push
+
+---->Mail report
+amathal, bcochran, bjdonie, charumax, dbondilx, devarapx, sdalvi, sujeesmx, gregantx, dchennax, dprudhix, njayakux, kraghuvx, poovarax
+
+---->offshore triage
+    
+            http://10.208.33.100:8080/view/ADMIN/view/TRIAGE/job/TRIAGE_Daily_Report/
+------>
+
+Failure Instance on WW11.4
+*Failure snippet:*
+{code}
+ 
+{code}
+*Failure Link:*
+*Logs:*
+Could not collect other logs as different tests attempted
+
+*FW Changesets:*
+{code}
+
+{code}
+*APL Changesets:*
+{code}
+
+{code}
+*Failure snippet:*
+{code}
+ 
+{code}
+
+
+*Drive Config:*
+{code}
+ 
+{code}
+*Failure snippet:*
+{code}
+ 
+{code}
+*Failure Link:*
+*Logs:*
+Could not collect other logs as different tests attempted
+
+
+*FW Changesets:*
+{code}
+
+{code}
+*APL Changesets:*
+{code}
+
+{code}
+*Drive Config:*
+{code}
+ 
+{code}
+*Failure snippet:*
+{code}
+ 
+{code}
+*Failure Link:*
+*Logs:*
+Could not collect other logs as different tests attempted
+*Failure snippet:*
+{code}
+ 
+{code}
+*SPDK details log:*
+{code}
+
+{code}
+*Dmesg Snippet*
+{code}
+
+{code}
+      
+--->Need Investigation
+
+-----> ent_ssd path
+       
+        http://drax-0.fm.intel.com:8080/
+
+---> main check jira's
+
+      https://nsg-jira.intel.com/secure/Dashboard.jspa?selectPageId=47063
+
+---> for json update using Ip:
+
+10.208.33.110 
+
+
+
+--->How to run windows Conval Via Jenkins Image:
+Refer the below wiki for the steps:https://nsg-wiki.intel.com/pages/viewpage.action?spaceKey=FW&title=Nightly+Jenkins+Builds+-+CSDP+and+CDRDP
+Steps:
+1. Need to have one windows client with M share and Y share mounted
+Note: It is available in onsite (search by using the label WIN2012_FW_BUILD in Jenkins Dashboard)
+2. Login to the client --> go to respective path(Y:\fast-data\Validation\BuildScripts)--> open command prompt--> Issue the command for the respective program(mentioned in the wiki)
+3. Build will be copying to the respective folders(path:)
+4. Install the sweet utility application to configure the clients to a single database
+Refer: sweet utility document in respective path(U:\dprudhix\Jenkins) and run the batch file(path: U:\aparna2x\CSDP_Binaries\LATEST_MRES\CSDP_MRES.bat)Test plan path in windows CV:
+Y:\rsync-isolation\AnnapurnaLabsDP-APLDP\fast-testing\test-plans\ColdstreamDP_MRESManually flashing the FW & LS to the client
+Login to the client using IP address
+Go to twidl --> check the drives are enumerating
+Issue the below commands:
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\ Lightswitch\CSDP_MRES\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokensToIgnore="SN")
+warmReset()
+unlock()
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\Coldstream
+...: DP_MRES\LATEST\Upgrade\E40AM411_B441_A109.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Issue system reboot
+after reboot check drive is enumerating
+unlock()
+parseIdentifyController()
+Note: crashdump valid value should be 0
+parseTPerState()
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVEfrom Crypto.Hash import SHA256
+psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+hash_value=SHA256.new()
+hash_value.update(psid)
+hash_output = hash_value.digest()
+verifyPsid(hash_output)
+Everything seems good release client to CV
+
+3 00:24:52 HC-A05-19-SM kernel: [122042.050851] pcieport 0000:02:00.0: pciehp: Slot(1): Card not present
+Nov  3 00:24:52 HC-A05-19-SM kernel: [122042.211630] pcieport 0000:02:01.0: pciehp: Slot(2): Link Down
+Nov  3 00:24:52 HC-A05-19-SM kernel: [122042.211634] pcieport 0000:02:01.0: pciehp: Slot(2): Card not present
+
+
+---->
+
+How to collect syslogs and kernel logs in client
+
+jenkins@f223-419-03-sm:~$ cd ../../
+jenkins@f223-419-03-sm:/$ ls
+jenkins@f223-419-03-sm:/$ cd var
+jenkins@f223-419-03-sm:/var$ ls
+jenkins@f223-419-03-sm:/var$ cd log
+jenkins@f223-419-03-sm:/var/log$ ls
+jenkins@f223-419-03-sm:/var/log$ ls -ltr
+jenkins@f223-419-03-sm:/var/log$ sudo cp -r syslog.5.gz /home/jenkins   sudo cp -r kern.log.1 /home/jenkins
+jenkins@f223-419-03-sm:/var/log$ cd
+jenkins@f223-419-03-sm:~$ cd
+jenkins@f223-419-03-sm:~$ pwd
+jenkins@f223-419-03-sm:~$ ls
+jenkins@f223-419-03-sm:~$ sudo chmod 777 syslog.5.gz       sudo chmod 777 kern.log.1.gz
+jenkins@f223-419-03-sm:~$ sudo gunzip -r syslog.5.gz       sudo gunzip -r kern.log.1.gz
+jenkins@f223-419-03-sm:~$ ls
+
+sudo cp -r kern.log.1.gz /home/jenkins
+
+Prepping LS and FW:
+
+unlock()
+writeFConfig(r"U:\sujeesmx\develop triage\CSDP_Generic_Latest\Lightswitch\CSDP_Generic\SSDPD21K015TA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"U:\sujeesmx\develop triage\CSDP_Generic_Latest\Upgrade\E201G312-002_EB3B0444_WFEM01Q0_EN130100_debug_CSDP_GenGeneric.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+unlock()
+parseIdentifyController()----- verify the values(crashdump, fw version, bootloader version)
+
+if false:give below commands
+unlock()
+aplCrashDumpInvalidate()
+vendorSpecific(DW0=0xF5, DW1=0, DW10=1, DW11=0, DW12=0x18, DW13=0, DW14=0, DW15=0, dataDirection=0, dataLength=0, buffer=None, admin=True)
+
+
+from Crypto.Hash import SHA256
+psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+hash_value=SHA256.new()
+hash_value.update(psid)
+hash_output = hash_value.digest()
+verifyPsid(hash_output)
+
+if false: setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+
+
+parseTPerState()
+
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVE
+
+
+
+
+jenkins_vnodes add:(example in linux)
+
+jenkins@HC-301-07-SM:~$ sudo mkdir jenkins_vnodes
+jenkins@HC-301-07-SM:~$ sudo chmod 777 jenkins_vnodes
+jenkins@HC-301-07-SM:~$ cd jenkins_vnodes
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo mkdir yoda-CHN2-JVN1
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo mkdir yoda-CHN2-JVN2
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo mkdir yoda-CHN2-JVN3
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo mkdir yoda-CHN2-JVN4
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo chmod 777 yoda-CHN2-JVN1
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo chmod 777 yoda-CHN2-JVN2
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo chmod 777 yoda-CHN2-JVN3
+jenkins@HC-301-07-SM:~/jenkins_vnodes$ sudo chmod 777 yoda-CHN2-JVN4
+jenkins@HC-301-07-SM:~/jenkins_vnodes$
+
+
+
+Rack NameRaritan IP: A0110.208.32.43A0210.208.32.43A0310.208.32.39A0410.208.32.45A0510.208.32.42A0610.208.32.42A0710.208.32.62A0810.145.65.247B0610.208.32.63B0710.208.32.63B0810.208.32.3130110.145.64.10930210.145.64.10930310.145.64.110/akc  (a02)30410.208.32.44
+
+
+https://10.208.32.42/dotnetnotice.asp?id=msie
+
+Recovery single node:-
+
+http://drax-0.fm.intel.com:8080/view/all/job/Recover_Single_Node/
+
+-->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test2/ent_ssd_test/test_plans/csdp/spdktest/log_page.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Consistency/LATEST --program csdp_hitachi
+
+
+Raritan IP:
+
+CSDP Rack details
+a06, a08, b06, 301, 303
+CDR DP Rack Details
+A01, A05, 304
+
+Raritan link - https://10.145.64.109/dotnetnotice.asp?id=msie
+
+Rariton IP:
+
+A06--10.145.64.109 -301
+
+A08--10.145.65.247 
+
+B06--10.208.32.63/10.145.64.110 -303
+
+A05--10.208.32.42 
+
+
+wget -4 -e use_proxy=no -q -O - http://isscorp.intel.com/IntelSM_BigFix/33570/package/scan/labscanaccount.sh | bash -s --
+
+
+"U:\charumax\jenkins_setup\jenkins_nfs_share_setup_charumax.docx"
+
+
+---->Whenever new ip added in Windows
+
+need remove in remlab(files), go to below folder
+
+C:\cygwin64\home\remlab( indhulo ssh files undali)
+
+--->Jira list
+
+CDRDP: amathal, bjdonie, charumax, dbondilx, sujeesmx, dchennax, dprudhix, njayakux, kraghuvx, poovarax, mckantor, apopat, nshams, kmarlapx
+
+CSDP:bjdonie, charumax, dchennax, dprudhix, kmarlapx, sdalvi, gandhi2x, palemvix,
+
+---.
+
+1.ASSERT
+
+             Unlock ();
+
+              Edump ();
+
+              nvmeSubsystemReset ();
+
+2. BAD_CONTEXT
+
+     Unlock ();
+
+     llf(timeout):
+
+     nvmeSubsystemReset ();
+
+(timeouts
+
+         375GB-1800
+
+          750GB-3600
+
+          1500GB-9000)
+
+
+
+3. NO_SLOWCNTXT
+
+      Unlock ();
+
+      cdm ();
+
+     nvmeSubsystemReset ();
+
+4. B_ASSERT_UNAV
+    Recover in UART set up
+
+
+
+**********Recover unable to set PSID drives************
+
+Step1:
+
+unlock();
+llf(timeout per sku);
+nvmeSubsystemReset();
+
+****powercycle
+
+Step2:
+
+unlock()
+writeTokenValue("S0",0x202)
+setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_65\Lightswitch\2018-11-29-1358-02MB\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_65\Upgrade\E40AM312_B441_A209.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+***power cycle
+
+run a sample security tests. If test passes update latest FW 
+
+Step3:
+unlock();
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_85\Lightswitch\2020-02-05-1658-07MB\***_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW']);
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_85\Upgrade\E40AM293_B441_A109.bin", firmwareSlot=1)
+nvmeSubsystemReset();
+***power cycle
+
+run a sample security tests here also. If test passes it can be used for security run
+
+
+Note: Try one steps one by even while updating FW. Don't give all the commands in a single shot
+
+
+Smoke Test:for normal test:(if needed set>tag ' ' )
+
+ctftest>BlockSIDAppNoteTest {'report_name': 'BlockSIDAppNoteTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+ctftest>BlockSIDLevel0DiscoveryTest {'report_name': 'BlockSIDLevel0DiscoveryTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+
+
+smoke test for failed scenerio:
+
+# Submitted by: dchennax# Testplan path: C:\Users\remlab\Desktop\csdp-mres-nrt-security.yml# Testplan executed on: 2022-02-27 22:23:50.775000# Iteration: 1 of 1
+set>socket_server_logging ''
+set>enforce_argument_check False
+set>fastOutputDisabled False
+set>skipIfChanged False
+set>auto_recover False
+set>recover_on_failure False# Global Variables
+set>fwPath r'Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST'
+set>fwVer None
+set>tag 'CSDP_WINDOWS_2016testing'
+util>reloadfast {}#include>TestSetupCSDP_fw_bl_mic_apl.tpl#>testrun id=21876201
+ctftest>SecurityLogPageFailTest{'report_name': 'EMCLogPageFail', 'no_logs': True, 'runTriage': False}
+
+Smoke Test for pita test:
+
+link - https://tidbits.intel.com/tidbits/tb_testruninfo.php?id=21025808 -link
+
+Main pita test for smoke:-ctftest>OpalFirmwareUpdateTest {'report_name': 'OpalFirmwareUpdateTest', 'ssi': 0,'no_logs': True, 'runTriage': False, 'quarch': True}
+
+for finding yml file:
+
+Y:\FAST\rsync-isolation\AnnapurnaLabsDP-APLDP\fast-testing\test-plans\ColdstreamDP_MRES
+
+convert production to sandbox:-(After converting , need to do disble)
+
+FWOPS_RSYNCTESTING
+
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx nsg-rsync-proj-sb.intel.com::apldp-fast-testing/ /cygdrive/c/fast-testing
+
+
+FWOPS_RSYNCTOOLS
+
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx --exclude=TwidlTVE/configurations.xml nsg-rsync-proj-sb.intel.com::apldp-fast-tools/ /cygdrive/c/fast-tools
+
+
+
+---->finally run in any host:(using command prompt)
+
+yet.py -t CSDP_WINDOWS_2016_OS_CHECK -f Y:\fast -data\Release\CV\coldstreamDP_MRES\LATEST -q  C:\user\remlab\Desktop\csdp-mres-nrt-security.yml
+                                                                                               (Manam save chesukunaa YML file)
+
+
+
+---->eppudinaa twidl correct version lo lekunte, oka healthy client lo ki log in ayyi (\\ur destinationhostIP\c$) \\10.145.67.49\c$
+     C folder lo ni fast data and fast release nu delete and add cheyaali.  (ur desinationhostIP means working client lo ki velli , work kaani IP tho log in kaavali)
+
+---> for running windows via jenkins:
+
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_WIN_CONVAL_ENTRY/
+
+
+-->For PDU Reboot:
+
+https://nsg-wiki.intel.com/pages/viewpage.action?pageId=257336810
+
+-->invalid cheyadiniki URL Php? taruvata -> (admin=1&)       comment-(((Test has passed in multiple re-runs on same firmware)))
+
+--> CSDP Mres Conval link:
+
+https://tidbits.intel.com/convaldashboard/firmware.php?program=csdp_mres&date=22-08-4#&testtable=Test%20Category,asc,Stage,asc,Start%20Time,asc,Run%20Time,asc
+
+
+--->
+
+Setting environment variables in linux client
+
+
+1.get one healthy client --> login via putty
+
+Give ls -a
+Sudo vim file name(.bash_fast)
+Copy and paste in which ever client u want in .bash_fast
+
+
+--->
+
+Fast testing and tools update kosam,
+
+remove fast tools from 'C' system, back vachi 'Deltacopy' lo ki velli,  'rsync_backup_script.bat' ni double click ivaali,
+
+next 'fast tool' lo ni 'bin' lo ki velli pina 'cmd' ani type chesi enter ivaali, taruvaata command prompt open avutundi, dhaani lo FASTboot.py -r ani ichi enter ivaali
+ 
+for linux environment variable:
+
+export FWOPS_RSYNCTESTING="/usr/bin/rsync -av --delete --chown=remlab:remlab --chmod=a=rwx --timeout=300 nsg-rsync-proj-sb.intel.com::apldp-fast-testing/ $HOME/fast-testing"
+export FWOPS_RSYNCTOOLS="/usr/bin/rsync -av --delete --chown=remlab:remlab --chmod=a=rwx --exclude=bin/Niagara --timeout=300 nsg-rsync-proj-sb.intel.com::apldp-fast-tools/ $HOME/fast-tools"
+
+
+--> Time stamp set format:
+
+sudo date -s '2022-03-08 21:54:06'
+
+checking time and update
+
+timedatectl set-ntp false
+timedatectl
+timedatectl set-time '2022-03-09 03:34:40'
+timedatectl
+timedatectl set-ntp true
+timedatectl
+
+reboot
+
+pool strategy:
+
+https://nsg-wiki.intel.com/pages/viewpage.action?spaceKey=FW&title=Pool+Strategy
+
+CSDP_CONVAL_MRES link:
+
+https://tidbits.intel.com/tidbits/tb_ownership.php?owner=Any&pool%5B0%5D=1042&location=&project=&status=showall&capabilities=
+
+
+
+       Presumed fail: some tests, Continuously failed in recent 3 convals so that these tests are went to presumed fail, after one week these tests automatically re-enable then these tests are picks the next conval.
+
+
+-->For finding serial number
+    
+      readTokenValue("SN")
+
+-->to update drive serial no
+open twidle
+unlock()
+writeTokenValue("SN","enter s.no")
+readTokenValue("SN")
+
+
+
+
+To disable multipath:
+
+sudo vim /etc/default/grub
+Modified the line from GRUB_CMDLINE_LINUX=” ” to GRUB_CMDLINE_LINUX=”nvme_core.multipath=0”    (After ESC , :wq!)
+sudo update-grub
+sudo reboot
+
+check one port clients if multipath is disabled or not.
+
+Prudhive, DevisriX/Chennaiah, DirasavanchaX You need to disable multipath then only it will enumerate with healthy 2 ports
+ 
+ or
+
+sudo rmmod nvme nvme_core;sudo modprobe nvme_core multipath=0;sudo modprobe nvme;sleep 5;sudo nvme list;
+
+---- ee commands ichi crash dump values clear chai
+unlock()
+aplCrashDumpInvalidate()
+vendorSpecific(DW0=0xF5, DW1=0, DW10=1, DW11=0, DW12=0x18, DW13=0, DW14=0, DW15=0, dataDirection=0, dataLength=0, buffer=None, admin=True) 
+
+
+--->Setting up the FW build machine:
+https://nsg-wiki.intel.com/pages/viewpage.action?spaceKey=FW&title=Jenkins+-+How+to
+
+HC-301-01-Z9 -- 10.208.44.70 -- FW build machine
+
+Install the necessary software:
+
+Git
+Jdk
+Strawberry perl
+Deoxygen
+Multi
+Extract the compiler to C:/ghs
+ 
+Change the amr domain to work group domain in contro pannel settings.
+
+Install the cygwin software-- Refer the wiki
+
+Mount the NFS share
+
+
+---->All FW build machines always maintain in 'WORKGROUP'
+ 
+In FW build machines lo static ip configure cheyalente , raritan lo client open chesi ,search lo ki velli 'Conrtrol pannel' click chesi, next 'programms lo turn on/off meeda click chesi 
+enable meeda click chesi properties lo ki vellaali , next IPV4 lo velli IP set cheyaali.
+
+FWOPS_RSYNCTESTING
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-testing/ /cygdrive/c/fast-testing
+
+FWOPS_RSYNCTOOLS
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx --exclude=TwidlTVE/configurations.xml nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-tools/ /cygdrive/c/fast-tools
+
+SB Check:
+
+every week sheduler will publish the job and it will identify latest changeset and post to the json file.
+
+
+To change the Develop branch to release/apl_dp using command  - git checkout release/apl_dp
+Checking whether that one develop or release/apl_dp using command - git branch
+
+https://nsg-jira.intel.com/browse/NSGSE-220058 - in that jira manual repro steps there
+
+--> for increse the buffer size in pool health repot
+
+GIT_HTTP_MAX_REQUEST_BUFFER=100M
+
+env ---> to confirm the buffer size
+
+https://nsg-bit.intel.com/plugins/servlet/ssh/account/keys(bit bucket)  - added ssh key 
+https://github.com/settings/keys(git hub) - added ssh key 
+
+To create dummy jobs on jenkins:
+
+Login into any client
+
+create a dummy folder-- sudo mkdir dummyjobs
+
+download jenkins.cli jar file --> go to jenkins Dashboard-->manage jenkins--> scroll down
+
+Issue get job command
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 get-job (existing job name) >(existing job name).xml
+
+Eg: java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Gayathri@432432 get-job Consistency_APL_CSDP_MRES_Main >Consistency_APL_CSDP_MRES_Main.xml
+
+Issue create job command
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 create-job (give new job name)< /home/jenkins/dummyjob/(existing job name).xml
+
+Eg:java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 create-job CSDP_IBM_Nightly_SPDK_IBM_Specific_MR6 < /home/jenkins/dummyjob/CSDP_IBM_Nightly_SPDK_IBM_Specific.xml
+
+
+
+I've changed bibucket MB repo URL to github MB repo URL and updated credentials in csdp hitachi jenkins jobs where ever it's called. FW image creation is working fine.
+Check the same for MRES CI, Consistency and nightly each and every job right from trigger and make changes as below.
+After making changes, test CI, consistency and nightly build creation process.
+MB repo old link: ssh://git@nsg-bit.intel.com:7999/fsedev/mansionbeach.
+gitMB repo new link to use: https://github.com/intel-innersource/firmware.storage.optane.fsedev.mansionbeach.git
+
+
+to check if smbus is detected or not in twidl - 
+
+ jenkins@HC-B06-17-SM:~$ sudo ./twidl_executable
+No drive specified... you must want interactive! Starting 'real' TWIDL!
+===========================================================================
+TWIDL Release 3.67.52 [19WW44]
+*** For Intel Internal use Only - Intel Confidential ***
+===========================================================================
+0) NVME SPN5A-Y750NC            H235            /dev/nvme0n1
+1) NVME SPN5A-Y750NC            H235            /dev/nvme1n1
+2) ATA  PNY CS900 240GB SSD     CS900212        /dev/sg0
+3) I2C  Aardvark 5.30           3.51            /tdk/aardvark0
+4)      NoDrive                                 NoDrive
+
+Select device [0..4, q to quit, o for more options]: 3
+Vendor:        Aardvark
+Model:         Aardvark 5.30
+Firmware:      3.51
+Serial:        2238533533
+Bus:           I2C
+Media SN:      2238533533
+Capacity:      0 (0.00 GB)
+MaxLBA:        -1
+MaxSectors:    0
+WWID:          ?
+Drive Status:  Unknown
+The attached drive appears to be a Generic Device SSD.
+
+===========================================================================
+| * Type commands('-d', "commands") to see the usage of commands TWIDL    |
+|     help utility. 'commands' is also known as 'cmds' and 'menu'.        |
+| * devObj (device object) is available for your use, no need to recreate.|
+| * Type quit() to exit twidl.                                            |
+|                                                                         |
+| * TWIDL wikipage with user guides and documentation:                    |
+|     https://nsg-wiki.intel.com/display/TOOLS/TWIDL                      |
+===========================================================================
+
+ 
+twidl>parseManagementInterface()
+   Length   : Num Bytes Received         : 0x06
+   SFLGS    : Status Flags Raw           : 0xbf
+            : SMBus Arbitration          : Block Read Completed.
+            : Powered Up                 : Subsystem is fully powered.
+            : Drive Functional           : NVM Subsystem is functional.
+            : Reset Not Required         : NVM Subsystem does not need a reset.
+            : PCIe Port 0 Link Active    : First PCIe port's link is up
+            : PCIe Port 1 Link Active    : Second PCIe port's link is up
+   SMART    : SMART Warnings Raw         : 0xff
+   CTEMP    : Composite Temp             : 0x24  36
+            :                            : Normal temp is measured in C
+   PDLU     : Drive Life Used            : 0x02   2%
+   PEC      : Packet Error Check         : 0x98
+True
+twidl>
+twidl>exit()
+jenkins@HC-B06-17-SM:~$
+
+
+------> /usr/bin/git fetch --no-tags --force --progress --depth=30 -- https://github.com/intel-innersource/firmware.storage.optane.ise.ent-ssd-test.git +refs/heads/*:refs/remotes/origin/* # timeout=120
+ERROR: Error cloning remote repo 'origin'
+hudson.plugins.git.GitException: Command "/usr/bin/git fetch --no-tags --force --progress --depth=30 -- https://github.com/intel-innersource/firmware.storage.optane.ise.ent-ssd-test.git +refs/heads/*:refs/remotes/origin/*" returned status code 128:
+stdout: 
+stderr: fatal: unable to access 'https://github.com/intel-innersource/firmware.storage.optane.ise.ent-ssd-test.git/': server certificate verification failed. CAfile: none CRLfile: none
+at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2732)
+
+we are facing this type issue: we need to upload the ".gitconfig" file in clients
+for this issue, we need to make .gitconfig file on each client is having valid proxies or not
+i've verified JVN's and enabled all jobs, they are working
+but not only admin nodes, we need to check clients as well
+
+U:\dchennax - .gitconfig
+
+reverse KT:
+
+
+  prior - mundu 
+ Json links
+
+>> Triage link-http://drax-0.fm.intel.com:8080/view/ADMIN/view/TRIAGE/job/TRIAGE_Daily_Report/
+
+>> ent_ssd_test cloning- git clone ssh://git@nsg-bit.intel.com:7999/ise/ent_ssd_test.git
+
+>> jenkins_utils-        git clone ssh://git@nsg-bit.intel.com:7999/ise/jenkins_util.git
+
+---> for json update using Ip:
+
+10.145.65.97
+
+
+token password:
+
+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
+
+
+>> for assigning our name in json configuration-
+
+git config --global user.name "dchennax"
+git config --global user.email "dirasavancha.chennaiah@intel.com"
+
+>> cd jenkins_utils/triage/
+
+>> git pull
+
+>> git diff
+
+>> cd /ent_ssd_test/utils/pyutils/triage
+
+>> ./jenkins_triage_sig_checker.py --sigFileAbsPath /home/jenkins/jenkins_utils/triage/signature_test.json --consoleLogFile chenna1.txt
+
+   ./jenkins_triage_sig_checker.py --sigFileAbsPath /home/jenkins/gitclone/firmware.storage.optane.ise.jenkins-utils/triage/signature_test.json --consoleLogFile chenna1.txt
+
+ 
+
+>> ./jenkins_triage_sig_checker.py --sigFileAbsPath /home/jenkins/jenkins_utils/triage/offshore_signature_apldp.json --consoleLogFile chenna7.txt
+
+>> That same thing we need to reflect in repositories by using below commands.
+
+        cd 
+         cd jenkins_utils/triage/
+
+       git add signature test. json or signature apldp. json
+       git commit -m” Triage_WW40.4”
+       git push
+
+
+--->
+
+
+story / pre-sighting -> signature_test.json
+sighting -> signature_apldp.json
+CDRDP offshore server pre-sighting/ story -> offshore_signature_test.json
+                           
+                                Offshore                          onsite
+ 
+pre-sighting/ story        offshore_signature_test.json       signature_test.json
+
+sighting                   signature_apldp.json               signature_apldp.json 
+
+
+
+
+     wiki links
+
+>> consistency wiki link->  https://nsg-wiki.intel.com/pages/viewpage.action?pageId=178338734
+
+>> machine/drive allocation wiki link->   https://nsg-wiki.intel.com/pages/viewpage.action?pageId=160046314
+ 
+>>jira link- https://nsg-jira.intel.com/browse/NSGSE-201330 
+
+     >>  https://nsg-bit.intel.com/projects/ISE/repos/alpinedp/commits-  go to commits and check with APL branch also
+                           |
+         before go to check the csdp fw and cdrdp fw use this link(For find the APL fw update whether in csdp and cdrdp)
+
+
+         https://nsg-bit.intel.com/projects/FSEDEV/repos/mansionbeach/commits -csdp fw- APL branch
+
+         
+         https://nsg-bit.intel.com/projects/FSEDEV/repos/cliffdalerefreshlb/commits -> cdrdp_fw------>backend
+
+
+----> https://nsg-bit.intel.com/projects/ISE/repos/alpinedp/commits
+
+-----> wiki query-
+ project in ("Mansion Beach", "NSG System Engineering") AND issuetype in (Sighting) AND status changed from "In Triage" during ("2022/01/01", "2022/02/015") 
+ by (sathis3x, lgnanasx, vijaysux, ppatchax, knalla1x, aparna2x, dbondilx, pandia1x, sujeesmx, kmarlapx, charumax, vchaitax, mkankanx, 
+-gregantx, vincevax, bjdonie, sdalvi) AND "Suspected Problem Area" in (FW, Lightswitch, "3rd Party IP") AND status = Open
+
+----->
+
+Could not collect other logs as different tests attempted.
+
+
+
+-----> Reported dp   .cfg got aborted after 120mins as       got hung,
+
+spdk log snippet:
+
+
+same issue is already tracking in jira number
+
+Hence closing this Jira as dup of jira
+
+--->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename 
+/home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/dp_nssr.cfg --spdk --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST --program CSDP_HITACHI
+
+---->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename 
+/home/jenkins/test3/ent_ssd_test/test_plans/csdp/spdktest/basic_io_format_4096.cfg --spdk --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --program csdp_hitachi
+
+
+--->
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename 
+/home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/dp_nssr.cfg --spdk --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST --program CSDP_HITACHI
+
+Original:
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename \
+/home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/dp_nssr.cfg --spdk --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST --program CSDP_HITACHI
+
+--->
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename
+/home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/dp_admin_controller_reset.cfg --spdk --program csdp_mres --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Consistency/LATEST
+
+----->
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename 
+/home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/dp_nssr.cfg --spdk --twidl 
+/home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0
+-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST --program CSDP_HITACHI
+
+--->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/cdrdp/spdktest/emc_df_logpage.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --program cdrdp
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary ./ --twidl /home/jenkins/twidl_executable --program CSDP
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary ./ --program CSDP --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Nightly/LATEST
+
+-->before test drive not enumarated
+
+suspect issue due to manuval intervention
+
+kernal log snippet
+
+test rerun result
+
+Closed jira By me:
+
+https://nsg-jira.intel.com/browse/NSGSE-204832
+https://nsg-jira.intel.com/browse/NSGSE-204833
+https://nsg-jira.intel.com/browse/NSGSE-205188
+https://nsg-jira.intel.com/browse/NSGSE-206044-general protection fault
+https://nsg-jira.intel.com/browse/NSGSE-206417-No relevant data found in kernal and syslogs.
+https://nsg-jira.intel.com/browse/NSGSE-207562
+ https://nsg-jira.intel.com/browse/NSGSE-207641-aborted by someone
+https://nsg-jira.intel.com/browse/NSGSE-207957
+ https://nsg-jira.intel.com/browse/NSGSE-207639-aborted by someone
+https://nsg-jira.intel.com/browse/NSGSE-208367-kernal loops
+https://nsg-jira.intel.com/browse/NSGSE-208368-time out reply
+https://nsg-jira.intel.com/browse/NSGSE-208271
+https://nsg-jira.intel.com/browse/NSGSE-208727-general protection fault
+https://nsg-jira.intel.com/browse/NSGSE-208773
+https://nsg-jira.intel.com/browse/NSGSE-208730
+https://nsg-jira.intel.com/browse/NSGSE-208740-time out reply
+https://nsg-jira.intel.com/browse/NSGSE-208907-general protection fault
+https://nsg-jira.intel.com/browse/NSGSE-208902-FATAL: java.io.IOException: Unexpected termination of the channel
+https://nsg-jira.intel.com/browse/NSGSE-208175-Unexpected Model String INTEL SSDPD21K750GAR in CSDP_MRES program
+https://nsg-jira.intel.com/browse/NSGSE-208910-general protection fault
+https://nsg-jira.intel.com/browse/NSGSE-208967-time out reply
+https://nsg-jira.intel.com/browse/NSGSE-209028- not loaded in NVME and SPDK
+https://nsg-jira.intel.com/browse/NSGSE-209726-No relevant data found in kernal and syslogs.
+https://nsg-jira.intel.com/browse/NSGSE-210057-general protection fault
+https://nsg-jira.intel.com/browse/NSGSE-209709-not loaded in NVME and SPDK
+https://nsg-jira.intel.com/browse/NSGSE-211404-fdisk failed with Input/ouput Error
+https://nsg-jira.intel.com/browse/NSGSE-211390- Fw update failed
+https://nsg-jira.intel.com/browse/NSGSE-187569-TestNamespaceIoFullDriveSize, Issuing create namespace on port: 0 
+https://nsg-jira.intel.com/browse/NSGSE-211539-TestNamespaceIoFullDriveSize, Issuing create namespace on port: 0 
+https://nsg-jira.intel.com/browse/NSGSE-212817- build was aborted
+https://nsg-jira.intel.com/browse/NSGSE-217087- command execution failed
+https://nsg-jira.intel.com/browse/NSGSE-217088- unexpected termination on channel
+https://nsg-jira.intel.com/browse/NSGSE-218813
+https://nsg-jira.intel.com/browse/NSGSE-219500 - Multiple tests failed in command execution failed
+https://nsg-jira.intel.com/browse/NSGSE-219928 -  build was aborted
+https://nsg-jira.intel.com/browse/NSGSE-220053 - Test hung after start of TestMultipleResetCommand_600 and Build timed out (after 600 minutes)
+https://nsg-jira.intel.com/browse/NSGSE-220060 - time out reply 
+https://nsg-jira.intel.com/browse/NSGSE-205959 -  PITA may be unavailable
+https://nsg-jira.intel.com/browse/NSGSE-220066 -  PITA may be unavailable/Rcode - 144
+https://nsg-jira.intel.com/browse/NSGSE-220085 -  unexpected termination on channel
+https://nsg-jira.intel.com/browse/NSGSE-220083 -  Failed to build SPDK(tainted error in sys log and dmesg log)
+https://nsg-jira.intel.com/browse/NSGSE-220082 -  Execute AdvSPDK dual port is failed: rcode is 144
+https://nsg-jira.intel.com/browse/NSGSE-220084 -  build was aborted in setup phase
+https://nsg-jira.intel.com/browse/NSGSE-220090 - FW updated fail
+https://nsg-jira.intel.com/browse/NSGSE-220091 -  Initialize DUT failed. Failed to get duts info
+https://nsg-jira.intel.com/browse/MBE-82072    -  -E- llf Failed!
+https://nsg-jira.intel.com/browse/MBE-82001    -  test_ibm_change_def_capacity-failed with -E- Unable to Unlock Drive
+https://nsg-jira.intel.com/browse/NSGSE-220092 - FW updated fail
+https://nsg-jira.intel.com/browse/NSGSE-220094 - build was aborted in setup phase
+https://nsg-jira.intel.com/browse/NSGSE-220093  - test_basic_hotplug_10x-Device Enumeration failed for controller on HC-301-25-SM
+https://nsg-jira.intel.com/browse/NSGSE-220106  -  unsafe repository on HC-B06-16-S
+https://nsg-jira.intel.com/browse/NSGSE-220111 - Build was aborted(General protection fault) 
+https://nsg-jira.intel.com/browse/NSGSE-220110 - Failed to install nvme driver at teardown(general protection fault)
+https://nsg-jira.intel.com/browse/NSGSE-220109 - Unexpected termination of the channel(Oops message)
+https://nsg-jira.intel.com/browse/NSGSE-220106 - unsafe repository(OS reimage)
+
+https://nsg-jira.intel.com/browse/MBE-81455 - presighting (KP)
+https://nsg-jira.intel.com/browse/MBE-75167 - Presight (Cha)
+https://nsg-jira.intel.com/browse/MBE-75167 - Presight (Cha)
+
+The host was idle for more than a week and later reported test got failed.
+
+
+Observed the reported tests failed with "Initialize DUT failed. FATAL-OFFLINE: Failed to get controller info" during the initialization of the DUT as part of the SPDK process.
+--->
+	
+Bondili, DeepthiX, Chennaiah, DirasavanchaX, Devarapalli, VenkateshX, Donie, Benjamin J, 
+Marlapati, Krishna PriyaX, N, JayakumarX, Pitchai, Sujees ManickamX, Prudhive, DevisriX, Raghuveer, KandukuriX, 
+Veeramani, CharumathiX, Venkatakrishnan, PoovarakavanX 
+
+
+
+
+--->As Drive is enumerated in single port tried IPMI reboot but still drive is not coming up so couldn't able to collect the other logs.
+
+-->Looks like Issue is intermittent and we are unable to reproduce the issue on failed host.
+
+---.
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/cdrdp/spdktest/namespace_aer.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --fw-dir /mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST --cdrdp-emc-cfg EMC_MRES --program CDRDP
+
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary --twidl /home/jenkins/test/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Nightly/LATEST --program CSDP
+
+-->Hi Team
+
+I'm leaving early today some personal emergency    --program CSDP
+
+Incase of any work reach out through my phone
+
+--->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/deallocate.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST --program CSDP_IBM
+
+Latest:
+
+1....  sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary ./ --program CSDP --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Nightly/LATEST
+
+
+
+
+---> Removed sighting jiras from wiki
+
+NSGSE-177922,NSGSE-187056 -2, MBE-71367-p4,mMBE-76027-p3
+
+
+---->
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/urgent_class_arbitration.cfg --spdk --program CSDP --twidl  /home/jenkins/twidl_executable --platform "Coldstream DP"  
+sudo py.test -k test_spdk_adv_dp_io_128k_ran_rd_wr_qd64 ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+
+--->
+Test is failing in set up phase due to test is started with single port , checked the host run history and last test left drive with healthy with dual port .
+
+Suspecting drive was in single port before test started due to manual intervention and it mighty be the environmental issue. 
+
+Hence closing this Jira and will reopen if issue occurred in upcoming jenkins run. Thanks
+
+--> Tried to trigger the reported test manually and it got passed on reported host.
+
+-->When we login into host drive was enumerated with one port. Even after IPMI/reboot also drive is enumerating with one port. 
+
+--->Tried to reproduce the issue manually on failed host for multiple iterations but test consistently passed all iterations.
+
+-->
+sudo py.test -k test_nvme_sedcli_activate_lockingsp ./ --program cdrdp --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --fw-dir /mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Consistency/LATEST
+
+--->
+MBE-67854 - CSDP_IBM - dp_admin_controller_reset.cfg - TestDpResetCtrlr0GetLogPgCtrlr1 can crash APL FW IN PROGRESS
+Randall, Robert
+
+origin/CSDP_MR4_LONG
+c817aaab
+CSDP_MR4	
+beb0d7837c89+
+11+	WW06.4	WW35.2	yes	Yes
+
+
+
+--.
+
+{
+                "jira": "NSGSE-198543",
+                "jiralink": "https://nsg-jira.intel.com/browse/NSGSE-198543",
+                "Description" : "Issue",
+                "regxlist": [
+					"test_identify_ctrlr_with_link_disable_100x",
+					"Failed to reset the link disable bit in the link control register on device",
+					"Build timed out",
+					"IBM_CS_DP"
+                ],
+                "sighting": "http://drax-0.fm.intel.com:8080/job//CSDP_IBM_Nightly_Pytest_Resets/ITERATIONS=1,LABEL=IBM_CS_DP_NIGHTLY,PY_TEST=test_identify_ctrlr_with_link_disable_100x/115/console"
+            },
+
+
+Hi Ben,
+
+By mistakenly below CDRDP Pre-sighting Jira was created as MBE Pre-sighting. Could you please help us to convert it to NSGSE Pre-sighting.
+
+Jira: https://nsg-jira.intel.com/browse/MBE-80555
+
+Thanks and Regards,
+Chennaiah
+
+
+twidl>unlock()
+True
+twidl>writeTokenValue("SR",0)
+True
+twidl>writeTokenValue("FD",0)
+True
+twidl>writeTokenValue("SF",1)
+True
+twidl>firmwareDownloadAndActivate(filename="/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin",activateAction=1,firmwareSlot=0)
+Error activating firmware after firmwareImageDownload has completed
+False
+twidl>firmwareDownloadAndActivate(filename="/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin",activateAction=1,firmwareSlot=0)
+Error activating firmware after firmwareImageDownload has completed
+False
+twidl>
+
+
+twidl>unlock()
+True
+twidl>writeTokenValue("SR",0)
+True
+twidl>writeTokenValue("FD",0)
+True
+twidl>writeTokenValue("SF",1)
+True
+twidl>firmwareDownloadAndActivate(filename="/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin",activateAction=1,firmwareSlot=0)
+Activation status states, Firmware Activation Requires NVM SubsystemReset
+True
+
+twidl>unlock()
+True
+twidl>writeTokenValue("SR",0)
+True
+twidl>writeTokenValue("FD",0)
+True
+twidl>writeTokenValue("SF",1)
+True
+twidl>firmwareDownloadAndActivate(filename="/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin",activateAction=1,firmwareSlot=0)
+Activation status states, Firmware Activation Requires NVM SubsystemReset
+True
+twidl>nvmeSubsystemReset()
+True
+
+
+
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/cdrdp/spdktest/namespacewithio.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --program CDRDP
+
+
+writeFConfig(fileName=r'/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Lightswitch/CDRDP_MRES/SSDPD2KS038T8M_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Lightswitch/CSDP_Generic/SSDPD21K750GA_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+
+firmwareDownloadAndActivate(filename=\"/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin\",activateAction=1,firmwareSlot=0)
+firmwareDownloadAndActivate(filename=\"/mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST/Upgrade/VPV1G517-002_VB3BD295_WFEM01Q0_VN150109_debug_CDRDPMRES.bin\",activateAction=1,firmwareSlot=0)
+
+sudo py.test -k test_spdk_adv_dp_io_32k_ran_rd_qd32 ./ --twidl --program CDRDP
+
+
+Latest conval instance WW08.4 
+EMCLogPagePowerCycle
+*Failure link:*https://tidbits.intel.com/tidbits/tb_testruninfo.php?id=21760718
+*Logs: * [^SecurityLogPagePowerCycleTestLogs.zip] 
+failure snippet:
+{code}
+revertSpWithValidation
+    is_used_session_open), self.testlog)
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/fft/Security/Opal/AssertsWithLogging.py", line 84, in raiseAssertionError
+    raise AssertionError(message)
+AssertionError: Fail to revertSP using KeepGlobalRangeKey = True, retrieved status: 0x3f = FAIL, was session open: True
+==============================  FAILURE  ==============================
+
+================================================================================  
+{code}
+Apl changeset:
+67f9466b1ba2
+FW changeset:
+644d0ce6c38f
+
+
+sudo py.test -k test_nvme_sedcli_ownership ./ --program CDRDP --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --fw-dir /mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST
+sudo py.test -k test_nvme_sedcli_lock_unlock ./ --program CDRDP --twidl /home/jenkins/twidl_executable --platform "CliffdaleRefresh DP" --fw-dir /mnt/drax-5-share/ConVal/Validation/CDRDP_MRES/Nightly/LATEST
+
+
+
+1.	hc-303-01-z9-
+2.	hc-303-03-z9-
+3.	hc-303-04-z9-
+4.	hc-303-05-z9-
+5.	hc-303-06-z9-
+6.	hc-303-09-z9-
+7.	hc-303-11-z9-
+8.	hc-303-12-z9-
+9.	hc-303-14-z9
+10.	hc-303-16-z9
+
+Consistency build flow:
+http://drax-0.fm.intel.com:8080/job/consistency_APL_Build_images_CSDP_MRES/
+
+
+condition 1
+
+A - MM Last
+B - MM Latest
+
+OR
+
+C - APL Last
+D - APL Latest
+
+
+if(A==B or C!=D) --> 
+if (A!=B or C==D) --> 
+
+observed an instance from 37.5 develop job hence re opening the jira.
+
+
+We are unable to reproduce the issue manually on failed host with reported configuration.    http://drax-0.fm.intel.com/
+
+
+Leaves
+
+Apr 1st,4th to 8th,11th to 13th and 15th
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_32k_cresc_wr_qd32_perst_secondary ./ --program CSDP_HITACHI --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST
+              
+namespacewithio.cfg/namespace_attach_detach_invalid_ctrlr_id.cfg/namespacecreateallformats.cfg/namespace_attach_detach.cfg/namespaceformatsecureerase.cfg
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_32k_cresc_wr_qd32_perst_secondary ./ --program CSDP_HITACHI --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST
+
+sudo nvme format /dev/nvme0 -l 2 -s 0 -i 0 -p 0 -m 0 -t 2700000
+sudo nvme format /dev/nvme0n1 -l 2 -s 0 -i 0 -p 0 -m 0 -t 2700000
+
+Hi team,
+Verified SANDBOX CHECK with timestap everything was fine and ran a one small test and test got passed without any issues.
+
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/ent_ssd_test/test_plans/csdp/spdktest/dp_mdts_1Mb.cfg --spdk --program csdp_hitachi --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Consistency/LATEST
+
+unlock()
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST/Upgrade/E201G222-002_EB3B0449_WFEM0180_EI129009_CSDP_EMC_MRES.bin",activateAction=1,firmwareSlot=0)
+nvmeSubsystemReset()
+
+unlock()
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST/Upgrade/E201G222-002_EB3B0449_WFEM0180_EI129009_CSDP_EMC_MRES.bin",activateAction=1,firmwareSlot=0)
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST/Upgrade/E201G224-002_EB3B0449_WFEM0180_EE219009_CSDP_EMC_MRES.bin",activateAction=1,firmwareSlot=0)
+  E201G224-002_EB3B0449_WFEM0180_EE219009_debug_CSDPMRES.bin 
+
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST/Upgrade/E201G224-002_EB3B0449_WFEM0180_EE219009_debug_CSDPMRES.bin",activateAction=1,firmwareSlot=0)
+
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST/Upgrade/E201G224-002_EB3B0449_WFEM0180_EE219009_debug_CSDPMRES.bin",activateAction=1,firmwareSlot=0)
+
+CSDP Conval mres link:
+
+https://tidbits.intel.com/tidbits/tb_ownership.php?owner=Any&pool%5B%5D=1042&project=&location=&status=showall&capabilities=
+
+
+HC-303-01-Z9
+HC-303-05-Z9
+HC-303-09-Z9
+HC-303-12-Z9
+HC-303-13-Z9
+HC-303-14-Z9
+HC-303-15-Z9
+HC-303-16-Z9
+HC-303-17-Z9
+
+E201G213-002_EB3B0438_WFEM0180_EN220117_debug_CSDP_HitHitachi.bin
+
+
+===========================================================================
+TWIDL Release 3.67.52 [19WW44]
+*** For Intel Internal use Only - Intel Confidential ***
+===========================================================================
+0) NVME SPN5A-Y375NC            H212            /dev/nvme0n1
+1) NVME SPN5A-Y375NC            H212            /dev/nvme1n1
+2) ATA  PNY CS900 250GB SSD     CS900613        /dev/sg0
+3)      NoDrive                                 NoDrive
+
+Select device [0..3, q to quit, o for more options]: 1
+Vendor:        0x8086:0x8086
+Model:         SPN5A-Y375NC
+Firmware:      H212
+Serial:        V5
+Bus:           NVMe
+Capacity:      375083606016 (375.08 GB)
+MaxLBA:        732585167
+MaxSectors:    732585168
+WWID:          ?
+Drive Status:  Healthy
+The attached drive appears to be a Coldstream Dual Port SSD.
+
+B06-26:
+
+twidl>unlock()
+True
+twidl>writeTokenValue("SR",0)
+True
+twidl>writeTokenValue("FD",0)
+True
+twidl>writeTokenValue("SF",1)
+True
+twidl>firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Upgrade/E201G213-002_EB3B0438_WFEM0180_EN220117_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+Activation status states, Firmware Activation Requires NVM SubsystemReset
+True
+twidl>nvmeSubsystemReset()
+True
+twidl>exit()
+
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST/Upgrade/E201G313-001_EB3B0444_WFEM0180_EC138100_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+
+E201G243-004_EB3B0444_WFEM01Q0_EN223200_debug_CSDP_GenGeneric.bin
+
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Upgrade/E201G243-004_EB3B0444_WFEM01Q0_EN223200_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Upgrade/E201G243-004_EB3B0444_WFEM01Q0_EN223200_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Lightswitch/CSDP_Generic/SSDPD21K750GA_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+
+
+twidl>unlock()
+True
+twidl>writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Lightswitch/CSDP_Generic/SSDPD21K750GA_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+True
+twidl>
+twidl>unlock()
+True
+twidl>writeTokenValue("SR",0)
+True
+twidl>writeTokenValue("FD",0)
+True
+twidl>writeTokenValue("SF",1)
+True
+twidl>firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Upgrade/E201G313-001_EB3B0444_WFEM0180_EC223100_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+Activation status states, Firmware Activation Requires NVM SubsystemReset
+True
+twidl>
+
+
+
+Looks like issue is belongs to host, the reported test got passed in recent convals. And also other tests ran on the host and it got passed
+We are unable to rerun the test manually as host is unavailable due to conval run.
+
+sudo py.test -k test_nvme_adv_dp_reset_basic_refclk ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+
+
+sudo py.test -k test_nvme_adv_dp_reset_basic_refclk ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp_hitachi --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Consistency/LATEST
+
+
+
+
+Disable the jobs for enclave migration:
+CI(MM)
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_EMC_MRES_V1_MM_Main/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_EMC_MRES_V1_MM_Trigger/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_EMC_MRES_V1_Test_Main/
+CI(APL)
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/3)%20CI%20Testing%20(APL%20Firmware)/job/CI_APL_CSDP_MRES_LONG_Merge_PR_Main/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/3)%20CI%20Testing%20(APL%20Firmware)/job/CI_APL_CSDP_MRES_LONG_Test_PR_Main/
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/4)%20Consistency%20Testing/job/Consistency_APL_CSDP_MRES_LONG_Trigger/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CSDP_MRES/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CSDP_MRES_Test/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_Main/
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_CSDP_MRES_LONG_Trigger/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CSDP_MRES/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CSDP_MRES_Test/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_Nightly_Main/
+Weekly testing:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/6)%20Weekly%20Testing/job/Weekly_APL_Main_CSDP_MRES_Test/
+http://drax-0.fm.intel.com:8080/job/Weekly_APL_Main_CSDP_MRES_Main/
+pool recovery:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/7)%20Pool%20Recovery/job/Recover_MRES_CSDP_Nodes/
+security_CTF test:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/8)%20Security_CTF_tests/job/Security_CTF_Tests_On_Linux_CSDP_MRES/
+Triage:
+http://drax-0.fm.intel.com:8080/view/ADMIN/view/TRIAGE/job/TRIAGE_Daily_Report/
+pool health:
+http://drax-0.fm.intel.com:8080/view/ADMIN/view/TRIAGE/job/Report_Daily_Pool_Health/
+
+
+
+
+FUKD7265003Q750BGN
+
+PHKD8366001K750BGN b06-13
+
+PHKD8366000U750BGN- bOX-5
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/ent_ssd_test/test_plans/csdp/spdktest/get_set_feature.cfg --spdk --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+
+
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/log_page.cfg --spdk --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+
+
+B06-03:
+
+ IBM_CS_DP IBM_CS_DP_1_5TB IBM_CS_DP_PITA IBM_CS_DP_UNLOCK IBM_CS_DP_CONST IBM_CS_DP_NIGHTLY
+
+A08-02:
+
+GENERIC_CS_DP GENERIC_CS_DP_DRIVE_PITA GENERIC_CS_DP_750GB GENERIC_CS_DP_CONST GENERIC_CS_DP_CI GENERIC_CS_DP_NIGHTLY
+
+A06-12:
+
+CONVAL_RACK_HC_A06 MRES_CS_DP  MRES_CS_DP_PITA MRES_CS_DP_1_5TB MRES_CS_DP_CONST MRES_CS_DP_CI MRES_CS_DP_NIGHTLY
+
+BAT tests:
+
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_io_512 ./ --program csdp_hitachi --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp_mres --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp_mres --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_io_512 ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_io_512 ./ --program csdp --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST
+sudo py.test -k test_nvme_nvmecli_ident_ctrl ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Consistency/LATEST
+
+
+https://nsg-wiki.intel.com/pages/viewpage.action?pageId=157061257 - for set up new node from jenkins
+
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Lightswitch/CSDP_Generic/SSDPD21K750GA_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Lightswitch/CSDP_Generic/SSDPD21K375GA_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+
+
+firmwareDownloadAndActivate(filename=r"/mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Consistency/LATEST/Upgrade/E201G313-001_EB3B0444_WFEM0180_EC223100_debug_CSDP_GenGeneric.bin",activateAction=1,firmwareSlot=0)
+
+Set up a new node in Jenkins:
+
+Node - A machine which is part of the Jenkins environment and capable of executing Pipelines or jobs. Both the Master and Agents are considered to be Nodes.
+
+Lable:
+
+The "slave" term was deprecated in Jenkins 2.0 and replaced by the "agent" term.
+
+Jenkins is an open-source automation tool written in Java with plugins built for Continuous Integration purposes.
+
+Jenkins achieves Continuous Integration with the help of plugins
+
+For example Git, Maven 2 project, Amazon EC2, HTML publisher, etc.
+
+master and slave: The Jenkins master acts to schedule the jobs, assign slaves, and send builds to slaves to execute the jobs
+
+
+
+
+----> Agent is for declarative pipelines and node is for scripted pipelines.
+
+Node: A Pipeline performs most of the work in the context of one or more declared node steps.
+Agent: The agent directive specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment depending on where the agent directive is placed
+
+
+
+Node: 
+
+A machine which is part of the Jenkins environment and capable of executing Pipelines or jobs. Both the Master and Agents are considered to be Nodes.
+
+Lable:
+
+When creating a new (slave) node, Jenkins allows us to tag a (slave) node with a label. 
+Labels represent a way of naming one or more slaves/agents. 
+
+(We leverage this labeling system to tie the execution of a job directly to one or more slave nodes.)
+
+If we open a client , we can see for single program it can be shared across multiple categories of tests , that is multiple pool
+So that this client will be utilize to its maximum amount of usage , we could extract from it, that is pool concept.
+
+
+---. Here no. of executers in nothing but no. of jobs that  this slave can run parallely
+----> The Labels for which the name is entered as “Slave1” is what can be used to configure jobs to use this slave machine
+
+
+
+
+Apl process:
+
+chmod: cannot access 'fw.txt': No such file or directory
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency$ sudo chmod 777 2022281-001
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency$ cd 2022281-001
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ ls
+fw.txt
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ sudo chmod 777 fw.txt
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ ls
+CSDP_Hitachi  fw.txt
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ sudo chmod 777 CSDP_Hitachi/
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ ls
+CSDP_Hitachi  fw.txt
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ cd CSDP_Hitachi/
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ ls
+EC222118_debug_CSDP_Hitachi_v13.bin  EC222118_debug_NLog_formats.py
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ sudo chmod 777 EC222118_debug_CSDP_Hitachi_v13.bin
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ cd EC222118_debug_CSDP_Hitachi_v13.bin
+-bash: cd: EC222118_debug_CSDP_Hitachi_v13.bin: Not a directory
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ ls
+EC222118_debug_CSDP_Hitachi_v13.bin  EC222118_debug_NLog_formats.py
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ sudo chmod 777 EC222118_debug_NLog_formats.py
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001/CSDP_Hitachi$ cd ../
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency/2022281-001$ cd ../
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Consistency$ cd ../
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG$ cd Nightly/
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Nightly$ ls
+113-001      2020502-002  202113-001   202153-001   2022227-001  251-001  314-002  323-001  385-001  413-001  432-001  471-001
+126-001      2020502-003  2021131-001  202174-001   2022231-001  252-001  314-003  333-001  401-001  414-001  433-001  474-001
+126-002      2020502-004  2021132-001  202184-001   2022232-001  281-001  314-004  335-001  402-001  421-001  441-001  481-001
+131-001      2020521-001  2021162-001  2022212-001  2022243-001  293-001  314-005  351-001  403-001  422-001  442-001  493-001
+131-002      2020523-001  202122-001   2022213-001  202291-001   293-002  314-006  352-001  404-001  423-001  444-001
+2020501-001  2021101-001  202124-001   2022214-001  202291-002   294-001  314-007  364-001  411-001  424-001  452-001
+2020502-001  202111-001   202132-001   2022224-001  202291-003   314-001  314-008  382-001  412-001  431-001  462-001
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Nightly$ ^C
+jenkins@HC-301-09-Z9:/mnt/drax-0-share/ConVal/Releases/APL_CDRDP_HITACHI_LONG/Nightly$
+
+----> 10.145.73.135/10.145.68.64  - 303-02
+
+                                  setUp Start                                   
+--------------------------------------------------------------------------------
+
+setUp()                                                                        #-I- Lightswitch : S0 = 514
+   328.92 s.  ERROR
+==============================  FAILURE  ==============================
+Traceback (most recent call last):
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/ctf/ct_base.py", line 422, in runTest
+    self.__setUp()
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/ctf/ct_base.py", line 689, in __setUp
+    self.setUp()
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/utils/decorators.py", line 59, in _trace
+    result = func(*args, **kwargs)
+  File "/home/remlab/fast-testing/ctftests/Security/Opal/ConcurrentPLI/RangeOperationsSequencePLITest.py", line 142, in
+setUp
+    super(RangeOperationsSequencePLITest, self).setUp()
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/utils/decorators.py", line 59, in _trace
+    result = func(*args, **kwargs)
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/fft/Security/Opal/Opal.py", line 108, in setUp
+    self._cleanUp_setUp()
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/fft/Security/Opal/Opal.py", line 205, in _cleanUp_setUp
+    " to original factory state", self.testlog)
+  File "/home/remlab/fast-tools/TwidlTVE/testlib/fft/Security/Opal/AssertsWithLogging.py", line 84, in raiseAssertionError
+    raise AssertionError(message)
+AssertionError: Test didn't start in original factory state - Tper was successfully reverted to original factory state
+==============================  FAILURE  ==============================
+
+================================================================================
+                 Additional Debug Information From TWIDL Start                  
+-------------------------------------------------------------------------------
+
+
+B06-09
+IBM_CS_DP IBM_CS_DP_375GB IBM_CS_DP_PITA IBM_CS_DP_UNLOCK IBM_CS_DP_CONST IBM_CS_DP_NIGHTLY IBM_CS_DP_CI
+
+
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/test/ent_ssd_test/test_plans/csdp/spdktest/reset.cfg --spdk --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST
+
+sudo py.test -k test_nvme_adv_sp_reset_128k_rand_wr_qd32_refclk ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+
+sudo py.test -k test_spdk_adv_sp_reset_4k_seq_wr_qd32_pwr ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST
+
+
+MBE-67854 : Test name:dp_admin_controller_reset.cfg:
+ 
+          Consistency occurrence: 23 times
+         
+          three weeks once these test got failed,  Every week is not comming
+
+          Nightly occurrence    : 18 times
+
+          last occurrence was WW9.2
+
+MBE-75618:
+
+        Test name: dp_io_controller_reset.cfg
+
+        Nightly occurrence : 24 times
+
+        last occurrence was WW33.5, three to four nightly conval once these test got failed.
+
+        remaining nightly convals these test got passed.
+
+MBE-72130:
+
+ Test names:
+
+test_perst_short_glitch_sequential_100x
+test_basic_link_disable_sequential_10x -3
+test_basic_hotplug_100x -2
+test_set_features_with_pita_glitch_10x
+test_nvme_nvmecli_io_512 -5
+test_nvme_nvmecli_ident_ctrl -6
+namespacecreateallformats.cfg -2 
+write_uncorrectable.cfg
+queue_mgmt.cfg -2
+namespace_create_delete.cfg
+basic_io_format_4096.cfg -2 
+test_basic_refclk_removal_sequential_100x
+test_normal_shutdown_power_loss_100x
+test_basic_warm_reset_concurrent_100x -10
+test_abrupt_shutdown_power_loss_100x
+dp_nssr.cfg
+io520pi2ms1_pract1.cfg -3
+deallocate.cfg
+test_nvme_adv_dp_io_4k_seq_rd_qd32 - con
+test_spdk_fio_hw_sanity -2
+test_basic_perst_schmoo_sequential_10x -2
+io520pi1ms1.cfg -3
+test_basic_hot_reset_sequential_10x
+test_total_reads_writes -2
+dp_admin_controller_reset.cfg -2
+dp_namespace_mgmt.cfg
+urgent_class_arbitration.cfg
+namespace_attach_detach.cfg
+basic_io_format_4096.cfg
+test_total_num_uncorrectable_errors_uncorrectable_by_ecc
+controller_registers.cfg
+dp_urgent_class_arbitration.cfg
+test_basic_perst_schmoo_sequential_100x
+prp_sgl_burst_io.cfg
+namespacewithio.cfg
+reset.cfg -2
+dp_io_format.cfg
+io4104pi2ms1.cfg
+test_identify_ctrlr_with_link_disable_100x
+doorbell.cfg -4
+basic_io.cfg -4
+aer.cfg -6
+deallocate.cfg -2
+dp_burst_io.cfg -5
+identify.cfg
+sanitize.cfg -3
+ibm.cfg
+namespace_aer.cfg -2
+burst_io.cfg -2
+pcie_config_space.cfg
+write_uncorrectable.cfg
+namespaceformatsecureerase.cfg
+dp_io_controller_reset.cfg -2
+
+A06-08
+
+CONVAL_RACK_HC_A06 MRES_CS_DP MRES_CS_DP_PITA MRES_CS_DP_750GB MRES_CS_DP_NIGHTLY
+
+
+
+
+
+
+      Multiple tests are failed with 'Enumeration Error: Controller CC.EN bit is not set even after 60100 ms!'
+
+        Nightly occurrence : 100+ times
+
+        every nightly conval these tests are got failed.
+
+
+
+sudo py.test -k test_spdk_adv_dp_reset_4k_seq_wr_qd32_pita_pwr ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/ent_ssd_test/test_plans/csdp/spdktest/emc_logpage_longtests.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST --csdp-emc-cfg EMC_MRES --program CSDP_MRES
+
+
+CSDP_MR4:
+
+CI -
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Generic/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_MR4_MM_Trigger/configure
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_MR4_MM/configure
+http://drax-0.fm.intel.com:8080/job/CI_MM_CSDP_MR4_Test_Main/configure
+http://drax-0.fm.intel.com:8080/job/CI_MM_PostProcess_CSDP_MR4_UImages/configure
+http://drax-0.fm.intel.com:8080/job/CI_MM_MR4_Test_CSDP_Generic_MR4_SPDK/configure
+
+Const -
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MR4_UImages/configure
+
+Nightly -
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_MR4_UImages/configure
+
+Repo files -
+https://nsg-bit.intel.com/projects/ISE/repos/jenkins_utils/browse/automation/MM_Conf/CSDP_MR4.json#8,13-14
+https://nsg-bit.intel.com/projects/ISE/repos/jenkins_utils/browse/automation/UI_Conf/CSDP_Generic.json
+https://nsg-bit.intel.com/projects/ISE/repos/jenkins_utils/browse/automation/UI_Conf/CSDP_IBM.json
+
+other:
+
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Generic/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_MR4_MM_Trigger/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Generic/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_MR4_Test_Main/configure ---
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Generic/view/4)%20Consistency%20Testing/job/Consistency_APL_Develop_Trigger/configure
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_MR4_MM/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MR4_UImages/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_MR4_UImages/configure
+
+
+
+sudo py.test -k test_spdk_adv_dp_io_128k_ran_rd_wr_qd64 ./ --program CSDP_MRES --twidl /home/jenkins/test/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+sudo py.test -k test_spdk_adv_sp_io_4k_64k_rand_rdwr_qd32 ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST
+sudo py.test -k test_nvme_adv_dp_reset_basic_perst ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST
+sudo py.test -k test_spdk_adv_dp_io_128k_ran_rd_wr_qd64 ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/ent_ssd_test/test_plans/csdp/spdktest/reset.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic/Nightly/LATEST --program CSDP
+sudo py.test tests/spdktest/test_spdktest.py --cfg-filename /home/jenkins/ent_ssd_test/test_plans/csdp/spdktest/emc_logpage_longtests.cfg --spdk --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST --csdp-emc-cfg EMC_MRES --program CSDP_MRES
+
+
+jenkins@HC-301-19-SM:~$ mkdir NSGSE-220081
+jenkins@HC-301-19-SM:~$ sudo chmod 777 NSGSE-220081
+jenkins@HC-301-19-SM:~$ cd NSGSE-220081/
+jenkins@HC-301-19-SM:~/NSGSE-220081$ git clone ssh://git@nsg-bit.intel.com:7999/ise/ent_ssd_test.git
+Cloning into 'ent_ssd_test'...
+remote: Enumerating objects: 76834, done.
+remote: Counting objects: 100% (2196/2196), done.
+remote: Compressing objects: 100% (1195/1195), done.
+remote: Total 76834 (delta 1648), reused 990 (delta 966), pack-reused 74638
+Receiving objects: 100% (76834/76834), 130.04 MiB | 1.09 MiB/s, done.
+Resolving deltas: 100% (51693/51693), done.
+Updating files: 100% (15350/15350), done.
+jenkins@HC-301-19-SM:~/NSGSE-220081$ cd ent_ssd_test/
+jenkins@HC-301-19-SM:~/NSGSE-220081/ent_ssd_test$ git branch
+* develop
+jenkins@HC-301-19-SM:~/NSGSE-220081/ent_ssd_test$ git checkout -b release/apl_dp
+Switched to a new branch 'release/apl_dp'
+jenkins@HC-301-19-SM:~/NSGSE-220081/ent_ssd_test$ git branch
+  develop
+* release/apl_dp
+jenkins@HC-301-19-SM:~/NSGSE-220081/ent_ssd_test$ cd functional_test/pytest/
+jenkins@HC-301-19-SM:~/NSGSE-220081/ent_ssd_test/functional_test/pytest$ sudo py.test -k test_spdk_adv_dp_io_128k_ran_rd_wr_qd64 ./ --program CSDP_MRES --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST
+
+
+adding new json file:
+---------------------------------------
+Last login: Thu Oct 13 02:47:40 2022 from 10.253.156.20
+jenkins@HC-A06-03-SM:~$ cd github/
+jenkins@HC-A06-03-SM:~/github$ cd firmware.storage.optane.ise.jenkins-utils/
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils$ cd automation/
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation$ cd MM_Conf/
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ ls
+CDRDP_EMC_V3.json   CSDP_EMC_MRES_V1.json  CSDP_MR4.json            DRAX5_CDRDP_PRQ2.json        DRAX5_CSDP_HITACHI_V1.json
+CDRDP_PRQ2.json     CSDP_HITACHI_V1.json   CSDP_MR6.json            DRAX5_CSDP_E000EM03.json     DRAX5_CSDP_IBM_V1.json
+CSDP_E000EM03.json  CSDP_IBM_V1.json       DRAX5_CDRDP_EMC_V3.json  DRAX5_CSDP_EMC_MRES_V1.json  DRAX5_CSDP_MR4.json
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        CSDP_EMC_MRES_MR6_V1.json
+        ../../triage/notepad++.exe
+
+nothing added to commit but untracked files present (use "git add" to track)
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ ls
+CDRDP_EMC_V3.json          CSDP_EMC_MRES_V1.json  CSDP_MR6.json             DRAX5_CSDP_EMC_MRES_V1.json
+CDRDP_PRQ2.json            CSDP_HITACHI_V1.json   DRAX5_CDRDP_EMC_V3.json   DRAX5_CSDP_HITACHI_V1.json
+CSDP_E000EM03.json         CSDP_IBM_V1.json       DRAX5_CDRDP_PRQ2.json     DRAX5_CSDP_IBM_V1.json
+CSDP_EMC_MRES_MR6_V1.json  CSDP_MR4.json          DRAX5_CSDP_E000EM03.json  DRAX5_CSDP_MR4.json
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ git add .
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CSDP_EMC_MRES_MR6_V1.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../triage/notepad++.exe
+
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ ls
+CDRDP_EMC_V3.json          CSDP_EMC_MRES_V1.json  CSDP_MR6.json             DRAX5_CSDP_EMC_MRES_V1.json
+CDRDP_PRQ2.json            CSDP_HITACHI_V1.json   DRAX5_CDRDP_EMC_V3.json   DRAX5_CSDP_HITACHI_V1.json
+CSDP_E000EM03.json         CSDP_IBM_V1.json       DRAX5_CDRDP_PRQ2.json     DRAX5_CSDP_IBM_V1.json
+CSDP_EMC_MRES_MR6_V1.json  CSDP_MR4.json          DRAX5_CSDP_E000EM03.json  DRAX5_CSDP_MR4.json
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ git commit -m"Adding new MR6 JSON files for MRES"
+[master e17be997] Adding new MR6 JSON files for MRES
+ 1 file changed, 23 insertions(+)
+ create mode 100644 automation/MM_Conf/CSDP_EMC_MRES_MR6_V1.json
+jenkins@HC-A06-03-SM:~/github/firmware.storage.optane.ise.jenkins-utils/automation/MM_Conf$ git push
+Username for 'https://github.com': dchennax
+Password for 'https://dchennax@github.com':
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 868 bytes | 868.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/intel-innersource/firmware.storage.optane.ise.jenkins-utils.git
+   1fc8a940..e17be997  master -> master
+---------------------------------------------------------------------------
+
+
+jenkins@HC-301-25-SM:~$ cd /tmp/
+jenkins@HC-301-25-SM:/tmp$ ls
+config-err-IMWcJv
+hsperfdata_jenkins
+hsperfdata_sys_cert
+ssh-PoUzSc3kgpke
+systemd-private-bfcb8cf9550142f19c37693d32d63233-colord.service-idapFi
+systemd-private-bfcb8cf9550142f19c37693d32d63233-ModemManager.service-qGFxXe
+systemd-private-bfcb8cf9550142f19c37693d32d63233-switcheroo-control.service-Qtdqeh
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-logind.service-UUsf4i
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-resolved.service-I3VwWh
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-timesyncd.service-8TDBdg
+systemd-private-bfcb8cf9550142f19c37693d32d63233-upower.service-rwyacj
+tmp
+tracker-extract-files.1001
+tracker-extract-files.1003
+tracker-extract-files.125
+udev_notify.out
+jenkins@HC-301-25-SM:/tmp$ cd
+jenkins@HC-301-25-SM:~$ cd twidl_trunk/
+jenkins@HC-301-25-SM:~/twidl_trunk$ cd
+jenkins@HC-301-25-SM:~$ sudo cp -r twidl_trunk/ /tmp/
+jenkins@HC-301-25-SM:~$ cd /tmp/
+jenkins@HC-301-25-SM:/tmp$ ls
+config-err-IMWcJv
+hsperfdata_jenkins
+hsperfdata_sys_cert
+ssh-PoUzSc3kgpke
+systemd-private-bfcb8cf9550142f19c37693d32d63233-colord.service-idapFi
+systemd-private-bfcb8cf9550142f19c37693d32d63233-ModemManager.service-qGFxXe
+systemd-private-bfcb8cf9550142f19c37693d32d63233-switcheroo-control.service-Qtdqeh
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-logind.service-UUsf4i
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-resolved.service-I3VwWh
+systemd-private-bfcb8cf9550142f19c37693d32d63233-systemd-timesyncd.service-8TDBdg
+systemd-private-bfcb8cf9550142f19c37693d32d63233-upower.service-rwyacj
+tmp
+tracker-extract-files.1001
+tracker-extract-files.1003
+tracker-extract-files.125
+twidl_trunk
+udev_notify.out
+jenkins@HC-301-25-SM:/tmp$
+
+
+Removing jira - MBE-81650
+                NSGSE-220068
+
+/home/jenkins/ent_ssd_test/utils/pyutils/triage/
+
+$GLOBAL_UTILS_URL
+
+$GLOBAL_UTILS_URL_HTTPS
+$GLOBAL_UTILS_URL_HTTPS
+
+HTTPS
+
+credentials for $GLOBAL_UTILS_URL
+
+IBM:
+
+CI:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20IBM/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_MR4_MM_Main/
+http://drax-0.fm.intel.com:8080/job/CI_MM_PostProcess_CSDP_MR4_UImages/configure
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_MR4_MM/configure
+
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20IBM/view/4)%20Consistency%20Testing/job/Consistency_APL_Main/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MR4_UImages/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20IBM/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_Test/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Build_Images/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_IBM_BAT/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_IBM_SPDK/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_IBM_Pytest/configure
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Test_FConfig/
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20IBM/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_Images_APL_CSDP_MR4_LONG/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_MR4_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20IBM/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_Test/configure
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Main/configure
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_BAT/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_SPDK_IBM_Specific/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_SPDK_IBM_Specific_Ccbs/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_SPDK/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Pytest/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Pytest_Resets/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Test_FConfig/configure
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_BAT/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_Opal1/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_Opal2_and_Others/
+
+
+HITACHI:
+
+CI:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_HITACHI_V1_MM_Main/configure
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_HITACHI_V1_MM/configure
+http://drax-0.fm.intel.com:8080/job/CI_MM_HITACHI_V1_Test_CSDP_Hitachi_SPDK/configure
+http://drax-0.fm.intel.com:8080/job/CI_MM_Test_PR_PostProcess_CSDP_Hitachi_UImages/
+
+consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CDRDP_HITACHI/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_Hitachi_UImages/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Build_Images_CDRDP_HITACHI/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CDRDP_Hitachi_UImages/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CDRDP_HITACHI_Test/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_Hitachi_BAT/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_Hitachi_SPDK/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_Hitachi_Pytest/configure
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CDRDP_HITACHI_LONG/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_Images_CDRDP_HITACHI/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_Hitachi_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CDRDP_HITACHI_Test/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Main/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_SPDK_Hitachi_Specific/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_SPDK/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Test_FConfig/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Pytest_Resets/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Pytest_SMBus/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Pytest/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_BAT/
+
+
+How to create dummy jobs on jenkins dashboard:
+
+To create dummy jobs on jenkins:
+
+Login into any client
+create a dummy folder-- sudo mkdir dummyjobs
+download jenkins.cli jar file --> go to jenkins Dashboard-->manage jenkins--> scroll down
+Issue get job command
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 get-job (existing job name) >(existing job name).xml
+
+Eg: java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 get-job Consistency_APL_CSDP_MRES_LONG_Trigger >Consistency_APL_CSDP_MRES_LONG_Trigger.xml
+
+Issue create job command
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 create-job (give new job name)< /home/jenkins/dummyjob/(existing job name).xml
+
+Eg:java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dprudhix:*Marchborn@1 create-job CSDP_IBM_Nightly_SPDK_IBM_Specific_MR6 < /home/jenkins/dummyjob/CSDP_IBM_Nightly_SPDK_IBM_Specific.xml
+
+
+dummy jobs(example)
+
+I have created the dummy Consistency and Nightly trigger,main and test jobs for Generic and IBM customers for MR6 Branch update.
+
+Please find the job links below:
+
+
+Consistency:
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Develop_Trigger_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_IBM_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_Generic_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Main_Test_MR6/
+
+Nightly:
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Develop_Trigger_MR6/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/CSDP_Generic_Nightly_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Main_Test_MR6/
+
+
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 get-job Consistency_APL_CSDP_MRES_LONG_Trigger >Consistency_APL_CSDP_MRES_LONG_Trigger.xml
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 create-job Consistency_APL_CSDP_MRES_LONG_Trigger_MR6< /home/jenkins/dummyjobs/Consistency_APL_CSDP_MRES_LONG_Trigger.xml
+
+
+
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 get-job Project Consistency_APL_Update_CSDP_MRES_Changesets >Project Consistency_APL_Update_CSDP_MRES_Changesets.xml
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 create-job Project Consistency_APL_Update_CSDP_MRES_Changesets_MR6< /home/jenkins/dummyjobs/Project Consistency_APL_Update_CSDP_MRES_Changesets.xml
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 get-job Nightly_APL_Update_CSDP_MRES_Long_Changesets
+ >Consistency_APL_CSDP_MRES_Main.xml
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 create-job Consistency_APL_CSDP_MRES_MR6_Main < /home/jenkins/dummyjobs/Consistency_APL_CSDP_MRES_Main.xml
+
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 get-job CSDP_MRES_Nightly_Main >CSDP_MRES_Nightly_Main.xml
+java -jar jenkins-cli.jar -s "http://drax-0.fm.intel.com:8080/" -auth dchennax:Dchenna@432432 create-job CSDP_MRES_MR6_Nightly_Main < /home/jenkins/dummyjobs/CSDP_MRES_Nightly_Main.xml
+
+
+
+dummy jobs for MRES:
+
+CI:
+
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_EMC_MRES_V1_MR6_MM_Main/
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_EMC_MRES_V1_MR6_MM/
+http://drax-0.fm.intel.com:8080/job/CI_Build_CSDP_EMC_MRES_V1_MR6_MM_Trigger/
+http://drax-0.fm.intel.com:8080/job/CI_MM_CSDP_EMC_MRES_V1_MR6_Test_Main/
+http://drax-0.fm.intel.com:8080/job/CI_MM_Test_PR_PostProcess_CSDP_MRES_MR6_UImages/
+http://drax-0.fm.intel.com:8080/job/CI_MM_EMC_MRES_V1_Test_CSDP_MRES_MR6_SPDK/
+
+consistency:
+
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_LONG_Trigger_MR6/
+
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Main_CSDP_MRES_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Build_Images_CSDP_MRES_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MRES_MR6_UImages/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Update_CSDP_MRES_MR6_Changesets/
+
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_Main_CSDP_MRES_Test_MR6/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_MR6_Main/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_MR6_BAT/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_MR6_SPDK/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_MR6_Pytest/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_CSDP_MRES_MR6_Security/
+
+
+
+
+Nightly:
+
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_CSDP_MRES_LONG_Trigger_MR6/
+
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Main_CSDP_MRES_MR6/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_Images_CSDP_MRES_MR6/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_EMC_MRES_V1_MR6_UImages/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Update_CSDP_MRES_MR6_Long_Changesets/
+
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Main_CSDP_MRES_Test_MR6/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_Main/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_BAT/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Release_Test_FConfig/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_SPDK/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_Pytest/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_Pytest_Resets/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_MR6_Nightly_Security/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_MRES_CSDP_MR6_BAT/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_MRES_CSDP_MR6_Tests_Opal1/
+
+
+
+
+bitbucket - $GLOBAL_ENT_SSD_TEST_URL change to below 
+
+github latest - $GLOBAL_ENT_SSD_TEST_URL_HTTPS
+
+Generic:
+
+CI:  
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_MR6_MM_Main/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_MR6_Test_Main/
+
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/3)%20Consistency%20Testing/job/Consistency_APL_Main_MR6/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MR4_UImages_MR6/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/3)%20Consistency%20Testing/job/Consistency_APL_Main_Test_MR6/configure
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/4)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_MR6/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_MR6_UImages_MR6/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_GENERIC_MR6/view/4)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_Test_MR6/
+http://drax-0.fm.intel.com:8080/job/CSDP_Generic_Nightly_Main_MR6/
+
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_Generic_BAT_MR6/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_Generic_Opal1_MR6/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_Generic_Opal2_and_Others_MR6/
+
+
+
+IBM:
+
+CI:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_MR6_MM_Main/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_MR6_Test_Main/configure
+
+
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/3)%20Consistency%20Testing/job/Consistency_APL_Main_MR6/configure
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MR4_UImages_MR6/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/3)%20Consistency%20Testing/job/Consistency_APL_Main_Test_MR6/configure
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/4)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_MR6/configure
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_MR6_UImages_MR6/configure
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP_IBM_MR6/view/4)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_Test_MR6/configure
+http://drax-0.fm.intel.com:8080/job/CSDP_IBM_Nightly_Main_MR6/
+
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_BAT_MR6/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_Opal1_MR6/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_CSDP_IBM_Opal2_and_Others_MR6/
+
+
+MRES:
+CI:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_EMC_MRES_V1_MM_Main/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_EMC_MRES_V1_Test_Main/
+
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CSDP_MRES/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_MRES_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CSDP_MRES_Test/
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CSDP_MRES/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_EMC_MRES_V1_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20MRES/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CSDP_MRES_Test/
+http://drax-0.fm.intel.com:8080/job/CSDP_MRES_Nightly_Main/
+
+http://drax-0.fm.intel.com:8080/job/Security_CTF_Tests_MRES_CSDP_BAT/
+http://drax-0.fm.intel.com:8080/job/Security_CTF_MRES_CSDP_Tests_Opal1/
+
+
+Hitachi:
+CI:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_Build_CSDP_HITACHI_V1_MM_Main/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/2)%20CI%20Testing%20(Media%20Module%20Firmware)/job/CI_MM_CSDP_HITACHI_V1_Test_Main/
+
+Consistency:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CDRDP_HITACHI/
+http://drax-0.fm.intel.com:8080/job/Consistency_APL_PostProcess_CSDP_Hitachi_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/4)%20Consistency%20Testing/job/Consistency_APL_Main_CDRDP_HITACHI_Test/
+
+Nightly:
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CDRDP_HITACHI_LONG/
+http://drax-0.fm.intel.com:8080/job/Nightly_APL_Build_CSDP_Hitachi_UImages/
+http://drax-0.fm.intel.com:8080/view/APL%20LONG%20BRANCH%20VALIDATION/view/CSDP%20Hitachi/view/5)%20Nightly%20Testing%20(Also%20run%20prior%20to%20release)/job/Nightly_APL_Main_CDRDP_HITACHI_Test/
+http://drax-0.fm.intel.com:8080/job/CSDP_Hitachi_Nightly_Main/
+
+
+
+
+
+
+Hi team,
+I am un available one and half hour from 3.00PM to 4.30PM, I have a travel plan at the time.
+
+
+
+
+
+
+
+
+
+
+
+
+unlock()
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST/Lightswitch/CSDP_IBM/SSDPD21K750GAI_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST/Lightswitch/CSDP_IBM/SSDPD21K750GAI_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_IBM/Nightly/LATEST/Upgrade/E201G243-004_EB3B0444_WFEM01Q0_EN223207_debug_CSDPIBM.bin",activateAction=1,firmwareSlot=0)
+nvmeSubsystemReset()
+
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST/Lightswitch/CSDP_IBM/SSDPD21K750GAI_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST/Upgrade/E201G431-002_EB3B0450_WFEM01Q0_EN223207_debug_CSDPIBM_MR6.bin",activateAction=1,firmwareSlot=0)
+
+
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST/Lightswitch/CSDP_IBM/SSDPD21K015TAI_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST/Upgrade/E201G431-002_EB3B0450_WFEM01Q0_EN223207_debug_CSDPIBM_MR6.bin",activateAction=1,firmwareSlot=0)
+
+Maximum run time of this test is 30mins. But it timed out after 720 mins and the workload phase passed.
+
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary ./ --program CSDP --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic_MR6/Nightly/LATEST
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_basic_refclk ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST
+
+
+sudo py.test -k test_nvme_adv_dp_fmt4k_reset_128k_rand_wr_qd32_perst_primary ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST
+sudo py.test -k test_basic_perst_sequential_100x ./ --program CSDP --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Generic_MR6/Nightly/LATEST
+sudo py.test -k test_basic_hotplug_10x ./ --program CSDP_IBM --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_IBM_MR6/Nightly/LATEST
+sudo py.test tests/fconfig/test_drive_fconfig.py --program CSDP_HITACHI --twidl /home/jenkins/twidl_executable --platform "Coldstream DP" --fw-dir /mnt/drax-0-share/ConVal/Validation/CSDP_Hitachi/Nightly/LATEST
+
+
+Steps:
+1. Reset Log Page F0h --{}>Test failed here only  "E Unlock failed"
+2. Perform llf and warm reset ---{}> After that failed with  "E llf Failed!"
+3. Pick random lba
+4. Inject Errors in the selected LBA
+5. Corrupt two silvers from the same Slice
+6. Reading from the same lba should increase read fail
+
+
+Removing the jira from signature_test.json:
+
+NSGSE-168165
+NSGSE-168044
+NSGSE-168045
+NSGSE-167998
+NSGSE-168002
+NSGSE-167788
+NSGSE-167774
+NSGSE-167529
+NSGSE-167449
+NSGSE-166961
+NSGSE-165240
+NSGSE-164791
+NSGSE-164790
+NSGSE-162562
+NSGSE-162517
+NSGSE-162507
+NSGSE-161705
+NSGSE-201330
+NSGSE-160705
+NSGSE-159659
+NSGSE-160596
+NSGSE-168680
+NSGSE-168958
+NSGSE-170256
+NSGSE-179168
+NSGSE-184708
+NSGSE-169094
+NSGSE-169056
+NSGSE-170261
+NSGSE-171825
+NSGSE-170408
+NSGSE-170638
+NSGSE-171131
+NSGSE-170615
+NSGSE-174482
+NSGSE-174687
+NSGSE-174677
+NSGSE-174764
+NSGSE-174941
+NSGSE-174811
+NSGSE-174958
+NSGSE-175216
+NSGSE-175621
+NSGSE-176232
+NSGSE-176273
+NSGSE-176285
+NSGSE-176322
+NSGSE-176380
+NSGSE-176411
+NSGSE-176538
+NSGSE-176589
+NSGSE-176595
+NSGSE-176584
+NSGSE-176622
+NSGSE-179242
+NSGSE-179387
+NSGSE-179428
+NSGSE-179440
+NSGSE-179519
+NSGSE-179545
+NSGSE-180668
+NSGSE-181171
+NSGSE-181556
+NSGSE-181653
+NSGSE-181740
+NSGSE-182190
+NSGSE-182872
+NSGSE-182700
+NSGSE-216520
+NSGSE-185943
+NSGSE-184476
+NSGSE-183139
+NSGSE-183284
+NSGSE-183367
+NSGSE-184345
+NSGSE-184483
+NSGSE-185796
+NSGSE-186096
+NSGSE-187137
+NSGSE-187243
+NSGSE-187576
+NSGSE-187666
+NSGSE-188710
+NSGSE-189025
+
+https://nsg-jira.intel.com/browse/NSGSE-189506
+
+
+
+
+
+NSGSE-168165
+NSGSE-168044
+NSGSE-168045
+NSGSE-167998
+NSGSE-168002
+NSGSE-167788
+NSGSE-167774
+NSGSE-167529
+NSGSE-167449
+NSGSE-166961
+NSGSE-165240
+NSGSE-164791
+NSGSE-164790
+NSGSE-162562
+NSGSE-162517
+NSGSE-162507
+NSGSE-161705
+NSGSE-201330
+NSGSE-160705
+NSGSE-159659
+NSGSE-160596
+NSGSE-168680
+NSGSE-168958
+NSGSE-170256
+NSGSE-179168
+NSGSE-184708
+NSGSE-169094
+NSGSE-169056
+NSGSE-170261
+NSGSE-171825
+NSGSE-170408
+NSGSE-170638
+NSGSE-171131
+NSGSE-170615
+NSGSE-174482
+NSGSE-174687
+NSGSE-174677
+NSGSE-174764
+NSGSE-174941
+NSGSE-174811
+NSGSE-174958
+NSGSE-175216
+NSGSE-175621
+NSGSE-176232
+NSGSE-176273
+NSGSE-176285
+NSGSE-176322
+NSGSE-176380
+NSGSE-176411
+NSGSE-176538
+NSGSE-176589
+NSGSE-176595
+NSGSE-176584
+NSGSE-176622
+NSGSE-179242
+NSGSE-179387
+NSGSE-179428
+NSGSE-179440
+NSGSE-179519
+NSGSE-179545
+NSGSE-180668
+NSGSE-181171
+NSGSE-181556
+NSGSE-181653
+NSGSE-181740
+NSGSE-182190
+NSGSE-182872
+NSGSE-182700
+NSGSE-216520
+NSGSE-185943
+NSGSE-184476
+NSGSE-183139
+NSGSE-183284
+NSGSE-183367
+NSGSE-184345
+NSGSE-184483
+NSGSE-185796
+NSGSE-186096
+NSGSE-187137
+NSGSE-187243
+NSGSE-187576
+NSGSE-187666
+NSGSE-188710
+NSGSE-189025
+
+
+Windows CV:
+
+
+yet.py -t <tag name> -f <FW Path> -q <CSDP Test plan file?
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Lightswitch\CSDP_MRES\SSDPD21K015TAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Upgrade\E40AM355_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Lightswitch\CSDP_MRES\SSDPD21K375GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Upgrade\E201M355_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Lightswitch\CSDP_MRES\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Upgrade\E201M355_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+
+
+
+unlock()
+parseIdentifyController() ----- verify the values(crashdump, fw version, bootloader version)
+
+if false:give below commands
+unlock()
+aplCrashDumpInvalidate()
+vendorSpecific(DW0=0xF5, DW1=0, DW10=1, DW11=0, DW12=0x18, DW13=0, DW14=0, DW15=0, dataDirection=0, dataLength=0, buffer=None, admin=True)
+
+
+from Crypto.Hash import SHA256
+psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+hash_value=SHA256.new()
+hash_value.update(psid)
+hash_output = hash_value.digest()
+verifyPsid(hash_output)
+
+if false: setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+
+
+parseTPerState()
+
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVE
+
+for windows small test:
+
+ctftest>BlockSIDLevel0DiscoveryTest {'report_name': 'BlockSIDLevel0DiscoveryTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+
+
+
+Generic:
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K750GA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G4DP_B444_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K015TA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G4DP_B444_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K375GA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G4DP_B444_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+
+
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G4DP_B444_A200.bin", firmwareSlot=1)
+
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K015TA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G431_B450_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+Windows latest:
+
+unlock()
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K375GA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G473_B450_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Lightswitch\CSDP_Generic\SSDPD21K750GA_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP\LATEST\Upgrade\E201G473_B450_A200.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+
+Linux:
+
+unlock()
+
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP/LATEST/Lightswitch/CSDP_Generic/SSDPD21K375GA_FT3.xml", tokensToIgnore="SN")
+
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+
+firmwareDownloadAndActivate(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP/LATEST/Upgrade/E201G473_B450_A200.bin", firmwareSlot=1)
+
+nvmeSubsystemReset()
+
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP/LATEST/Lightswitch/CSDP_Generic/SSDPD21K750GA_FT3.xml", tokensToIgnore="SN")
+
+
+
+unlock()
+writeFConfig(r"C:\Users\remlab\Desktop\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"C:\Users\remlab\Desktop\E40AM243_B449_A009.bin", firmwareSlot=1)      
+nvmeSubsystemReset()
+Host reboot.
+
+unlock()
+writeFConfig(r"C:\Users\remlab\Desktop\SSDPD21K375GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"C:\Users\remlab\Desktop\E40AM243_B449_A009.bin", firmwareSlot=1)      
+nvmeSubsystemReset()
+Host reboot.
+
+unlock()
+writeFConfig(r"C:\Users\remlab\Desktop\SSDPD21K015TAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"C:\Users\remlab\Desktop\E40AM243_B449_A009.bin", firmwareSlot=1)      
+nvmeSubsystemReset()
+Host reboot.
+
+unlock()
+parseIdentifyController() ----- verify the values(crashdump, fw version, bootloader version)
+
+if false:give below commands
+unlock()
+aplCrashDumpInvalidate()
+vendorSpecific(DW0=0xF5, DW1=0, DW10=1, DW11=0, DW12=0x18, DW13=0, DW14=0, DW15=0, dataDirection=0, dataLength=0, buffer=None, admin=True)
+
+
+from Crypto.Hash import SHA256
+psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+hash_value=SHA256.new()
+hash_value.update(psid)
+hash_output = hash_value.digest()
+verifyPsid(hash_output)
+
+if false: setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+
+
+parseTPerState()
+
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVE
+
+for windows small test:
+
+ctftest>BlockSIDLevel0DiscoveryTest {'report_name': 'BlockSIDLevel0DiscoveryTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+
+for linux small test:
+
+ctftest>BlockSIDClearEventsTest {'report_name': 'BlockSIDClearEventsTest', 'ssi': 0,'no_logs': True, 'runTriage': False, 'quarch': True, 'skipAnalysis': True}
+
+
+
+Smoke Test:for normal test:(if needed set>tag ' ' )
+
+ctftest>BlockSIDAppNoteTest {'report_name': 'BlockSIDAppNoteTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+ctftest>BlockSIDLevel0DiscoveryTest {'report_name': 'BlockSIDLevel0DiscoveryTest', 'ssi': 0,'no_logs': True, 'runTriage': False}
+
+
+ctftest>Opal2TPerResetTest {'report_name': 'Opal2TPerReset', 'ssi': 0,'no_logs': True, 'runTriage': False}
+
+
+comment: CSDP NRT security category test plan
+localonly: No
+requirements:
+  name: '*'
+  owner: 'Available'
+  pool: 'CSDP_Conval_MRES'
+  platform: Coldstream DP
+tests:
+
+
+############ MBE-16546 ###################
+
+- templatecontents: |
+                    # Global Variables
+                    set>fwPath r'%FFW%'
+                    set>fwVer '%FW%'
+                    set>tag '%TAG%'
+                    util>reloadfast {}
+                    #include>TestSetupCSDP_fw_bl_mic_apl.tpl
+                    ctftest>Opal2TPerResetTest {'report_name': 'Opal2TPerReset', 'ssi': 0,'no_logs': True, 'runTriage': False}
+  assignments:
+  - quantity: 1
+    requirements:
+      capabilities: 'Security'
+
+
+
+2022WW8.4_120000
+
+
+unlock()
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/LATEST/Lightswitch/CSDP_MRES/SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/LATEST/Upgrade/E40AM082_B449_A209.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+
+unlock()
+parseIdentifyController() ----- verify the values(crashdump, fw version, bootloader version)
+
+if false:give below commands
+unlock()
+aplCrashDumpInvalidate()
+vendorSpecific(DW0=0xF5, DW1=0, DW10=1, DW11=0, DW12=0x18, DW13=0, DW14=0, DW15=0, dataDirection=0, dataLength=0, buffer=None, admin=True)
+
+
+from Crypto.Hash import SHA256
+psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+hash_value=SHA256.new()
+hash_value.update(psid)
+hash_output = hash_value.digest()
+verifyPsid(hash_output)
+
+if false: setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+
+
+parseTPerState()
+
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVE
+
+
+
+**********Recover unable to set PSID drives************
+
+Step1:
+
+unlock()
+llf(timeout per sku)
+nvmeSubsystemReset()
+
+375 - 1800
+750 - 3600
+1500 - 9000
+
+****powercycle
+
+Step2:
+
+unlock()
+writeTokenValue("S0",0x202)
+setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/Build_92/Lightswitch/CSDP_MRES/SSDPD21K375GAR_T1_nonFIPS_FT3.xml", tokensToIgnore="SN")
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+firmwareDownloadAndActivate(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/Build_92/Upgrade/E40AM243_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+***power cycle
+run a sample security tests. If test passes update latest FW 
+or
+Step2:
+
+unlock()
+writeTokenValue("S0",0x202)
+setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_90\Lightswitch\SSDPD21K750GAR_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_96\Upgrade\E40AM204_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+
+unlock()
+writeTokenValue("S0",0x202)
+setPsid(psidAscii='ITISAGOODDAYTOREVERTTHISINTELSSD')
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_96\Lightswitch\CSDP_MRES\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW'])
+warmReset()
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_96\Upgrade\E40AM343_B449_A009.bin", firmwareSlot=1)
+nvmeSubsystemReset()
+Host reboot.
+
+
+
+***power cycle
+
+run a sample security tests. If test passes update latest FW 
+
+Step3:
+unlock();
+writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_85\Lightswitch\2020-02-05-1658-07MB\***_T1_nonFIPS_FT3.xml", tokenDict={}, tokensToIgnore=['SN','WW']);
+firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\Build_85\Upgrade\E40AM293_B441_A109.bin", firmwareSlot=1)
+nvmeSubsystemReset();
+***power cycle
+
+run a sample security tests here also. If test passes it can be used for security run
+
+
+Note: Try one steps one by even while updating FW. Don't give all the commands in a single shot
+
+
+ CryptoEraseSequencePLITest:
+
+AssertionError: Disk was successfully cleaned, but it had to use AdminSp revert -> revertSp on LockingSp failed  -MBE-76340
+
+RevertSequencePLITest:
+
+AssertionError: Disk was successfully cleaned, but it had to use AdminSp revert -> revertSp on LockingSp failed  -MBE-76340
+
+ EMCLogPagePowerCycle:
+
+AssertionError: Fail to revertSP using KeepGlobalRangeKey = True, retrieved status: 0x3f = FAIL    -MBE76333
+
+EMCLogPageFail
+
+new jira created:
+https://nsg-jira.intel.com/browse/MBE-81856
+https://nsg-jira.intel.com/browse/MBE-81855
+https://nsg-jira.intel.com/browse/MBE-82035
+https://nsg-jira.intel.com/browse/MBE-82076
+
+csdp-optane-gen1-fast-testing
+csdp-optane-gen1-fast-tools
+
+for windows environment varaible: csdp-optane-gen1
+ 
+FWOPS_RSYNCTESTING
+
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-testing/ /cygdrive/c/fast-testing
+
+
+FWOPS_RSYNCTOOLS
+
+c:\deltacopy\rsync -av --delete --timeout=300 --chmod=a=rwx --exclude=TwidlTVE/configurations.xml nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-tools/ /cygdrive/c/fast-tools
+
+
+for linux sandbox environment variables
+
+export FWOPS_RSYNCTESTING="/usr/bin/rsync -av --delete --chown=remlab:remlab --chmod=a=rwx --timeout=300 nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-testing/ $HOME/fast-testing"
+export FWOPS_RSYNCTOOLS="/usr/bin/rsync -av --delete --chown=remlab:remlab --chmod=a=rwx --exclude=bin/Niagara --timeout=300 nsg-rsync-proj-sb.intel.com::csdp-optane-gen1-fast-tools/ $HOME/fast-tools"
+
+path for recovery:
+
+C:\fast-tools\TwidlTVE\testlib\fft\Security\Opal\TestBase
+configurable_namespace_locking_fft.py
+
+new sandbox security side run conval:
+
+https://tidbits.intel.com/tidbits/tb_testrunquery.php?tidbit=NEW_SANDBOX_CHECK
+
+for triggering conval in main dashboard:
+
+C:\fast-tools\bin>python yet.py -t CSDP_MRES-NRT-SECURITY-2022WW13.1_120000 -f Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST -q C:\Users\remlab\Desktop\csdp-mres-nrt-security.yml
+
+csdp mres in tidbits:
+
+https://tidbits.intel.com/convaldashboard/detail.php?program=csdp_mres
+
+
+
+
+Name	
+HC-A08-10-SM
+Help for feature: Name
+ 	Description	
+Static IP 10.145.65.230 - IPMI 10.145.66.14
+Help for feature: Description
+ 	# of executors	
+1
+Help for feature: # of executors
+ 	Remote root directory	
+/home/jenkins/jenkins_jobs
+Help for feature: Remote root directory
+ 	Labels	
+CONVAL_RACK_HC_A08 MRES_CS_DP MRES_CS_DP_PITA MRES_CS_DP_375GB MRES_CS_DP_CI MRES_CS_DP_CONST MRES_CS_DP_NIGHTLY
+Help for feature: Labels
+ 	Usage	
+Use this node as much as possible
+Help for feature: Usage
+ 	Launch method	
+Launch agents via SSH
+Help for feature: Launch method
+ 	Host	
+10.145.65.230
+Help for feature: Host
+ 	Credentials	
+
+jenkins/****** (Jenkins Linux Nodes)
+ 
+ Add
+Help for feature: Credentials
+ 	Host Key Verification Strategy	
+Known hosts file Verification Strategy
+Help for feature: Host Key Verification Strategy
+[Help]
+One or more fields in this block have been edited. 
+Advanced...
+ 	Availability	
+Keep this agent online as much as possible
+Help for feature: Availability
+Node Properties
+Disable deferred wipeout on this node	Help for feature: Disable deferred wipeout on this node
+Environment variables	
+Prepare jobs environment	Help for feature: Prepare jobs environment
+Tool Locations	
+Save
+
+
+writeFConfig(fileName=r'/mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST/Lightswitch/CSDP_MRES/SSDPD21K750GAR_T1_nonFIPS_FT3.xml', tokenDict={}, tokensToIgnore=['SN','WW'])
+firmwareDownloadAndActivate(filename="/mnt/drax-0-share/ConVal/Validation/CSDP_MRES/Nightly/LATEST/Upgrade/E201G355-002_EB3B0449_WFEM0180_EE219009_debug_CSDPMRES.bin",activateAction=1,firmwareSlot=0)
+
+unlock()
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/LATEST/Lightswitch/CSDP_MRES/SSDPD21K375GAR_T1_nonFIPS_FT3.xml", tokensToIgnore="SN")
+
+writeTokenValue("SR",0)
+writeTokenValue("FD",0)
+writeTokenValue("SF",1)
+
+firmwareDownloadAndActivate(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/LATEST/Upgrade/E40AM355_B449_A009.bin", firmwareSlot=1)
+
+nvmeSubsystemReset()
+
+writeFConfig(r"/mnt/ydrive/fast-data/releases/CV/ColdstreamDP_MRES/LATEST/Lightswitch/CSDP_MRES/SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokensToIgnore="SN")
+
+Looks like issue is belongs to host, the reported test got passed in recent convals. And also other tests ran on the host and it got passed
+
+E201G243-004,E40AG243_B444_A200
+
+U:\dchennax
+
+
+bricked drive solved SN: PHKD93100017750BGN
+
+Invalid cheyadaaniki - before admin=1& (https://tidbits.intel.com/convaldashboard/firmware.php?program=csdp_mres&date=22-25-1#&testtable=Test%20Category,asc,Stage,asc,Start%20Time,asc,Run%20Time,asc)
+Invalid cheyadaaniki - After admin=1&(https://tidbits.intel.com/convaldashboard/triage.php?admin=1&program=csdp_mres&version=22-25-1&caller=%2Fconvaldashboard%2Ffirmware.php#&testtable=Test%20Category,asc,Stage,asc,Host%20Name,asc,Start%20Time,asc)
+
+To fail a test without making it count
+1- Open test page in tidbits
+2- add "&admin=1" at the end of the link
+3- Then choose on the right "Fail test"
+4- Enter "Triage mode" on the right navigation
+5- enter "admin=1" between "&caller" in the tidbits link
+6- click on the circle, mark as invalid
+7- Reason "Manual termination"How to kill queued tests using Queue Manager:
+
+Test re ran on same and different client and it got passed hence it could be one time issue so invalidating the failure
+
+Test re ran on different client without tag and with tag and it got passed hence it could be one time issue so invalidating the failure.
+
+	Client issue, test has passed in re-run
+        Env issue, re-kicked on same host and test has passed
+
+to checking logs: to run below command
+Sudo python triage.py
+
+
+
+Opal1SetByteA13Test - invalid cheyaali
+SUMSequencePLITest - re run cheyaali
+
+MBE-82035
+
+We observed all PITA/PITA-Linux tests in latest Generic windows conval of CSDP_MR6 branch failed with 
+
+-E- CTF execution hit an exception: 'TestResults instance has no attribute 'getDriveIdentifier''
+
+Few observation:
+
+-> After failing the test drive went to no drive state
+
+-> After trying to recover the drive, its hitting with ASSERT_FFFF02A8 post reboot.
+
+-> when we are trying to recover ASSERT it going to B_ASSERT_UNAV.
+
+-> when hitting with B_ASSERT_UNAV, we are unable to see the  drive in UART.
+
+-> Tried to reboot the system for multiple times and after that able to clear the assert and drive is coming back to healthy 
+
+
+Pita client list:
+
+https://tidbits.intel.com/convaldashboard/triage.php?admin=1&program=csdp&version=22-40-1&caller=%2Fconvaldashboard%2Ffirmware.php#&testtable=Test%20Category,asc,Stage,asc,Host%20Name,asc,Start%20Time,asc
+
+
+
+team, FYI..from 4:30-5:30 i''be unavailable. Need to visit hospital for check up
+
+
+
+Windows Conval:
+
+
+
+--> for triggering windows conval steps link
+
+https://nsg-wiki.intel.com/pages/viewpage.action?spaceKey=FW&title=Nightly+Jenkins+Builds+-+CSDP+and+CDRDP
+
+
+---->
+
+How to run windows Conval Via Jenkins Image:
+Refer the below wiki for the steps:
+https://nsg-wiki.intel.com/pages/viewpage.action?spaceKey=FW&title=Nightly+Jenkins+Builds+-+CSDP+and+CDRDP
+Steps:
+1. Need to have one windows client with M share and Y share mounted
+Note: It is available in onsite (search by using the label WIN2012_FW_BUILD in Jenkins Dashboard)
+2. Login to the client --> go to respective path(Y:\fast-data\Validation\BuildScripts)--> open command prompt--> Issue the command for the respective program(mentioned in the wiki)
+3. Build will be copying to the respective folders(path:)
+4. Install the sweet utility application to configure the clients to a single database
+Refer: sweet utility document in respective path(U:\dprudhix\Jenkins) and run the batch file(path: U:\aparna2x\CSDP_Binaries\LATEST_MRES\CSDP_MRES.bat)
+
+Test plan path in windows CV:
+Y:\rsync-isolation\AnnapurnaLabsDP-APLDP\fast-testing\test-plans\ColdstreamDP_MRES
+
+Manually flashing the FW & LS to the client
+Login to the client using IP address
+Go to twidl --> check the drives are enumerating
+Issue the below commands:
+•	unlock()
+•	writeFConfig(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\ Lightswitch\CSDP_MRES\SSDPD21K750GAR_T1_nonFIPS_FT3.xml", tokensToIgnore="SN")
+•	warmReset()
+•	unlock()
+•	writeTokenValue("SF",1)
+•	firmwareDownloadAndActivate(r"Y:\fast-data\Releases\CV\ColdstreamDP_MRES\LATEST\Upgrade\E40AM411_B441_A109.bin", firmwareSlot=1)
+•	nvmeSubsystemReset()
+•	Issue system reboot
+•	after reboot check drive is enumerating
+•	unlock()
+•	parseIdentifyController() Note: crashdump valid value should be 0
+•	parseTPerState()
+Verify the below values to be proper
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVE
+
+•	Everything seems good release client to CV
+
+---->
+
+
+Basic overview:
+
+Generate FW -- build images created using jenkins and it should copy from NFS share(Linux machine) to Y-share -->copytestball.py
+• Prep host n run smoke test -- FWupdate steps
+• Trigger Conval --> csdp (jenkins job), cdrdp (yet.py)
+• Monitor n Triage
+
+
+Output:
+
+[5:57 PM] Prudhive, DevisriX
+
+===========================================================================
+TWIDL Trunk 3.91.05 [21WW41]
+*** For Intel Internal use Only - Intel Confidential ***
+===========================================================================
+0) ATA INTEL SSDSC2BB480G7 N2010112 \\.\PHYSICALDRIVE0
+1) NVME INTEL SSDPD2KS076T8M VPAAM413 \\.\PHYSICALDRIVE1
+2) NVME INTEL SSDPD2KS076T8M VPAAM413 \\.\PHYSICALDRIVE2
+3) NoDrive NoDriveSelect device [0..3, q to quit, o for more options]: 1
+Vendor: 0x8086:0x1120
+Model: INTEL SSDPD2KS076T8M
+NorthFirmware: VPAAM413
+SouthFirmware: None
+Serial: 0
+Bus: NVMe
+Media SN: None
+Capacity: 7681501126656 (7681.50 GB)
+MaxLBA: 15002931887
+MaxSectors: 15002931888
+WWID: ?
+Drive Status: Healthy
+The attached drive appears to be a Cliffdale Refresh DP SSD.===========================================================================
+| * Type commands('-d', "commands") to see the usage of commands TWIDL |
+| help utility. 'commands' is also known as 'cmds' and 'menu'. |
+| * devObj (device object) is available for your use, no need to recreate.|
+| * Type quit() to exit twidl. |
+| -This TWIDL instance is using IPython! Welcome to the year 2022! |
+| |
+| * TWIDL wikipage with user guides and documentation: |
+| https://nsg-wiki.intel.com/display/TOOLS/TWIDL |
+===========================================================================Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (
+Intel)]
+Type "copyright", "credits" or "license" for more information.IPython 5.8.0 -- An enhanced Interactive Python.
+? -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help -> Python's own help system.
+object? -> Details about 'object', use 'object??' for extra details.twidl In [1]: unlock()
+Out[1]: Truetwidl In [2]: parseIdentifyController()
+Identify Controller Parsed:
+VID : PCI Vendor Id : 0x8086
+SSVID : Subsystem Vendor Id : 0x1120
+SN : Serial Number : 0
+MN : Model Number : INTEL SSDPD2KS076T8M FR : Firmware Revision : VPAAM413
+RAB : Recommended Arbitration Burst : 0x04
+IEEE : IEEE Organization Unique Identifer: 0x5CD2E4
+CMIC : Controller MP IO/NS Sharing Cap : 0x03
+MDTS : Maximum Data Transfer Size : 0x05
+CNTLID : Controller ID : 0x0001
+VER : Version : 0x00010200
+RTD3R : Runtime D3 Resume Latency : 0x00989680
+RTD3E : Runtime D3 Entry Latency : 0x00E4E1C0
+OAES : Optional Async Events Supported : 0x00000100
+CTRATT : Controller Attributes : 0x00000000
+RRLS : Read Recovery Levels Supported : 0x0000
+CNTRLTYPE : Controller Type : 0x00
+FGUID : FRU Globally Unique Identifier : 0x0000000000000000
+CRDT1 : Command Retry Delay Time 1 : 0x0000
+CRDT2 : Command Retry Delay Time 2 : 0x0000
+CRDT3 : Command Retry Delay Time 3 : 0x0000
+NVMESD : NVMe Storage Device : 0x00
+NVMEE : NVMe Enclosure : 0x00
+MEC : Management Endpoint Capabilities : 0x01
+OACS : Optional Admin Command Support : 0x001F
+ACL : Abort Command Limit : 0x7F
+AERL : Async Event Request Limit : 0x07
+FRMW : Firmware Updates : 0x02
+LPA : Log Page Attributes : 0x0E
+ELPE : Error Log Page Entries : 0x7F
+NPSS : Number of Power States Supported : 0x02
+AVSCC : Admin Vendor Specific Command Conf: 0x00
+APSTA : Autonomous Power State Trans Attr : 0x00
+WCTEMP : Warning Composite Temp Threshold : 0x0157
+CCTEMP : Critical Composite Temp Threshold : 0x015D
+MTFA : Max Time For Firmware Activation : 0x0258
+HMPRE : Host Memory Buffer Preferred Size : 0x00000000
+HMMIN : Host Memory Buffer Minimum Size : 0x00000000
+TNVMCAP : Total NVM Capacity : 0x0000000000000000000006FC
+7D256000
+UNVMCAP : Unallocated NVM Capacity : 0x000000000000000000000000
+00000000
+RPMBS : Replay Protected Mem Block Support: 0x00000000
+EDSTT : Extended Device Self-Test Time : 0x0001
+DSTO : Device Self-Test Options : 0x01
+FWUG : Firmware Update Granularity : 0x00 (0KB)
+KAS : Keep Alive Support : 0x0000 (0 milliseconds)
+HCTMA : Host Controlled Thermal Mgmt Atrib: 0x0000
+MNTMT : Minimum Thermal Management Temp : 0x0000
+MXTMT : Maximum Thermal Management Temp : 0x0000
+SANICAP : Sanitize Capabilities : 0x00000003
+HMMINDS : Host Mem Buf Min Desc Entry Size : 0x00000000
+HMMAXD : Host Mem Max Descriptor Entries : 0x0000
+NSETIDMAX : NVM Set Identifier Max : 0x0000
+ENDGIDMAX : Endurance Group Identifier Max : 0x0000
+ANATT : ANA Transition Time : 0x00
+ANACAP : Asym NS Access Capabilities : 0x00
+ANAGRPMAX : ANA Group Identifier Max : 0x00000000
+NANAGRPID : Number of ANA Group Identifiers : 0x00000000
+PELS : Persistent Event Log Size : 0x00000000
+SQES : Submission Queue Entry Size : 0x66
+CQES : Completion Queue Entry Size : 0x44
+MAXCMD : Maximum Outstanding Commands : 0x0000
+NN : Number of Namespaces : 0x00000001
+ONCS : Optional NVM Command Support : 0x006E
+FUSES : Fused Operation Support : 0x0000
+FNA : Format NVM Attributes : 0x06
+VWC : Volatile Write Cache : 0x00
+AWUN : Atomic Write Unit Normal : 0x0000
+AWUPF : Atomic Write Unit Power Fail : 0x0000
+NWPC : Ns Write Protection Capabilities : 0x00
+NVSCC : NVM Vendor Specific Command Config: 0x00
+ACWU : Atomic Compare & Write Unit : 0x0000
+SGLS : Scatter Gather List (SGL) Support : 0x00070001
+MNAN : Max Num of Allowed Namespaces : 0x00000000
+Intel Specific VU Identify Controller:
+VS_SS : Stripe Size : 0x05
+VS_DH : VS_Drive_Std_FailMde_Str (Health) : Healthy
+VS_GENX : PCI Link Gen Speed : 0x03
+VS_NLW : PCI Link Width : 0x04
+VS_SCAP : Security Capabilities : 0x00
+VS_SSTS : Security Status : 0x00
+VS_BL : Bootloader Version : D295
+VS_MIC_BL : MIC Bootloader Version : 01A1
+VS_MIC_FW : MIC Firmware Version : 01Q0
+VS_CPA : Controller Performance Allocation : 0x00
+VS_DYNN : Dynamic Namespace Support : 0x00
+VS_SNST : Dynamic Namespace Granularity : 0x00 (1 GB)
+VS_SESR : Support For Enablement of Security Ranges on Overprovisioned D
+rive : False
+Dual Port Specific VU Identify Controller:
+PD : Production Date MMDDYYYY : 00
+ISN : Intel Serial Number :
+APL_TEMP : Current APL Temperature in C : 0x24 (36)
+OT_LAST : APL Overtemp Shutdown Flag in C : 0x00 (0)
+OT_LIFE : APL Overtemp Shutdown Flag in C : 0x00 (0)
+MIN_TL : APL Minimum Temperature in C : 0x21 (33)
+MAX_TL : APL Maximum Temperature in C : 0x2F (47)
+CFS_A : CFS Count for Port A : 0x00000000
+CFS_B : CFS Count for Port B : 0x00000000
+CDV : Crashdump Valid : 0x00
+EPROM_VER : Bridge EPROM Version : 0x37
+BASE_DEV_FW : Intel Device FW Revision : VN140109
+EPROM_DID : Bridge EPROM Device ID : 0xA525
+CLS_T : PCIe Link Speed For This Port : 0x03
+NLS_T : PCIe Link Width For This Port : 0x02
+CLS_O : PCIe Link Speed For Other Port : 0x00
+NLS_O : PCIe Link Width For Other Port : 0x00
+CLS_BASE_DEV : PCIe Link Speed For Intel Asic : 0x03
+NLS_BASE_DEV : PCIe Link Width For Intel Asic : 0x04Out[2]: Truetwidl In [3]: from Crypto.Hash import SHA256
+...: psid = "ITISAGOODDAYTOREVERTTHISINTELSSD"
+...: hash_value=SHA256.new()
+...: hash_value.update(psid)
+...: hash_output = hash_value.digest()
+...: verifyPsid(hash_output)
+...:
+Out[3]: Truetwidl In [4]: parseTPerState()
+TPer State:
+Session Open : no
+Has Owner : no
+Locking SP Activated : no
+Admin SP LifeCycle : MANUFACTURED
+Locking SP LifeCycle : MANUFACTURED-INACTIVEOut[4]: Truetwidl In [5]: llf()
+Out[5]: Truetwidl In [6]:
+
+[6:00 PM] Prudhive, DevisriX
+BlockSIDAppNoteTest
+
+[6:01 PM] Prudhive, DevisriX
+BlockSIDLevel0DiscoveryTest
+
+
+My performance:
+
+Category/KPP
+Operations/Status reporting
+
+
+
+Achievement
+Took complete ownership on assigned tasks. %
+
+KPP Description
+Billed hours in customer project as per finance report
+Appraisee Remarks
+1.Took ownership of triage report, sending status report by completing the work within stipulated time. 
+2.Dispositioning environmental jiras on timely basis with accurate justification. 
+3.Maintaining the clients in healthy status on regular basis with the help of pool health report. 
+4.Updating the blocker issues to team immediately which will helpful to resolve the issue.
+
+
+Category/KPP
+Operations/Response time or SLA
+
+Achievement
+Tracking the triage failures and monitored the pool health on regular basis. %
+
+KPP Description
+Timely deliveries/Adherence to SLA
+Appraisee Remarks
+1.Updating the triage report status with in the SLA. 
+2.Providing initial analysis and updating the jira with in SLA after assigning the jira.
+
+Category/KPP
+Productivity/Input Productivity
+
+KPP Description
+Input hours as per Sapience, Digi ACT
+Appraisee Remarks
+1. Updating Digital ACT on daily basis and maintaining working hours regularly. 
+2. Extending working hours on need basis to complete the work.
+
+
+Category/KPP
+Quality/Delivery Productivity Index (DPI)
+
+
+
+
+Taking ownership of Traiging the failures, Pool health report, on maintaining inventory for CDRDP and CSDP programs.
+
+
+
+
+Quality/Quality of Deliverables (DQI)
+
+
+
+1. Triaging the failures completely with the help of triage report by updating/creating the jira's.
+2. Maintaining the wiki pages by updating the failures and the FW/APL changeset's details for customer tracking purpose.
+3. Updating the Json file on regular basis which is helpful for Jira tracking purpose for the existing failures.
+
+
+Category/KPP
+Productivity/Input Productivity
+
+
+
+Maintaining working hours as per sapience. And also extending working hours on need basis.
+
+
+
+
+Category/KPP
+Others/Others
+
+
+
+1. Trained on DP related tasks. 2. Helped to team on CSDP physical rack movement. 3. Helped to team on resolving the host issues on request basis.
+
+
+
+
+Category/KPP
+Operations/Utilization
+
+
+
+maintaining working hours and completing the assigned task by the timeline period.
+
+
+
+
+Operations/Response time or SLA
+
+
+
+Sending the Triage report and Pool health report status to stakeholders with in SLA.
+
+
+
+Operations/Process Adherence
+
+1. Helped the team by fixing host issues and by recovering the drives on regular basis.
+2. Updated hosts with FW and LS before triggering the conval. And also triaged the failures.
+3. Sending the status report to stake holders by triaging the Jenkins & windows failures for CDRDP and CSDP programs.
+4. Sending pool health report on daily basis to maintain healthy clients to avoid environmental issues.
+5. Collected the hardware inventory for both CDRDP and CSDP programs.
+
+
+
+Delivery/Quality of delivery
+
+Sending Triage Report status by Triaging/Creating the jira's for failures to stakeholders and no defect /escalation was done on it.
+
+
+Category/KPP
+Operations/Process Adherence
+
+KPP Description
+Compliant to the defined process norms
+Appraisee Remarks
+1.Based on traige report updating/creating the jiras for the failures. 
+2.Updating json file on regular basis to automate the failure for jira suggestions. 
+3.Updating wiki pages with FW/APL/Failure details for customer reference. 
+4.Sending status report to stakeholder on regular basis with detail information. 
+5.Also maintaing the client in healthy status to avoid environmental issues.
+
+
+
+
+
+Expecting to take multiple tasks and work based on priority tasks.
+
+I have taken multiple tasks independently and 
+
+
+
+I have taken more responsibilities on the Jenkins execution and 
+ took the Jenkins related new CSDP_MR6 branch task independently and working on it.
+
+
+
+
+
+
+
+
+productivity/input productivity
+Have been updating Digital ACT on daily basis and making sure it is updated regularly. Incase of any pending run exists extends the working hours to complete the CV runs.
+
+quality/deliver on time
+Working efficiently with in the working hours and also extending the support based on requirements.
+Based on the CV runs ,triaging the failures and analyzing the failure whether its is test script / setup issue and file a presighting as per the process defined.
+Supported for CSDP rack migration
+
+Learning/knowledge sharing session
+Daily updating the status of all the jira's which are assigned to my name. Helped the team members by sharing debug skills.
+
+customer/customer delight satisfaction
+1.Have been working for different programs and have provided delivery on time during the CV runs and ensured there is no delay in providing the reports.2.Provided the customer with the necessary logs needed for debug purpose.
+
+operation/process adherence
+Based on the CV runs , triaging the failures and analyzing the failure whether its is node failure/ New failure and based on a type of failure creating a story or file a Presighting as per the process defined.
+
+operations/status reporting
+1.Always completed the work within the SLA. 2.Further actively monitoring CV runs and regularly updating the Jira ticket with necessary information.
+
+
+new:
+
+Quality/Deliver on time:
+
+KPP Description
+Schedule adherence/SLA adherence of module or WBS element
+Appraisee Remarks
+Providing accurate debug analysis by root causing the issue and also providing the solution to the environment/test script issues. 
+Working efficiently within the working hours and also extending the support based on requirements. 
+Fixing the build time out issues by monitoring the Jenkin job changes to reduce Conval noise. 
+Working as per timeline for DP project as we have CV runs and making sure the machines are available before CV is triggered, and also made sure the CV is completed on time across different products and sending reports ,completing the triage on time. Based on the CV runs ,triaging the failures and analyzing the failure whether its is test script / setup issue and file a presighting as per the process defined. 
+working on the build release engineering for the creation of FW releases.
+
+
+Productivity/Input Productivity:
+
+KPP Description
+Input hours as per Sapience, Digi ACT
+Appraisee Remarks
+Maintaining the Input hours as per Sapience on daily basis and also extended the work hours based on the required support.
+
+My Goals - Total Weightage : 15.00 %
+
+
+Learning/Knowledge sharing session:
+
+KPP Description
+Effectively leading discussions with teams to enhance domain knowledge
+Appraisee Remarks
+Daily updating the status of all the jira's which are assigned to my name. Jira Scrubbing on daily basis and closing with latest pass results. 
+Based on FW team requirement collecting the additional information by running the test manually. Helped the team members by sharing debug skills.
+
+
+Category/KPP
+Customer/Customer Delight and Satisfaction:
+
+KPP Description
+To ensure effective & timely solution to employees and ensure 0% SLA violation
+Appraisee Remarks
+Have been working for different customers and have provided delivery on time during the CV runs and ensured there is no delay in providing the reports and also without violating the SLA Communicating with onsite co-ordinator/team to clarify the questions for suggestions to move for further debug purpose. 
+Provided the customer with the necessary logs needed for their debug purpose immediately and made sure there is no delay in providing them the required data within time. Have started working on Build release engg in the creation of firmware releases. 
+No defects found/escalations with reference to the provided solutions to the bug till date.
+
+Category/KPP
+Operations/Process Adherence:
+
+KPP Description
+Compliant to the defined process norms
+Appraisee Remarks
+Worked always being complaint with the norms, and provided the best possible output while complying to the norms provided within HCL as well as the Client. 
+I am supporting for stakeholder's request while extending working hours and completing the task. Based on the CV runs , triaging the failures and analyzing the failure whether its is Node Failure/ New Failure and based on a type of failure creating a story or file a Pre-sighting as per the process defined.
+
+
+Category/KPP
+Operations/Status reporting:
+
+KPP Description
+Timely and accurate and comprehensive/ ‘highlighting risks’
+Appraisee Remarks
+Always completed the work within the SLA . Further actively monitoring CV runs and regularly updating the Jira ticket with necessary information. 
+Providing the accurate analysis of the failure and assigning Jira to further teams to take necessary actions.
+
+Appraisee Remarks
+I have working for DP program, gave my 100% effort towards completion of tasks assigned to me. 
+I have enhanced my domain skills and contributed for providing accurate debug analysis by root causing the issue and also providing the solution to the script issues. 
+I have tried my best to complete the CV runs by triaging and analyzing the issues on time and sending the status report to the customers on time without delay from our end. 
+And also I have started working in Build release engineering for creation of firmware releases . Helped the team members by sharing debug skills. Worked in CSDP drive recovery process. 
+I have always shown dedication towards work and showed eagerness to take up new task, which will help myself to gather more technical information. 
+I look forward to work with my team lead and team members to achieve the the program milestone. Expecting best possible feedback.
+
+I have working for DP program, gave my 100% effort towards completion of tasks assigned to me. I have enhanced my domain skills and contributed for providing accurate debug analysis by root causing the issue and also providing the solution to the script issues. I have tried my best to complete the CV runs by triaging and analyzing the issues on time and sending the status report to the customers on time without delay from our end. And also I have started working in Build release engineering for creation of firmware releases . Helped the team members by sharing debug skills. Worked in CSDP drive recovery process. I have always shown dedication towards work and showed eagerness to take up new task, which will help myself to gather more technical information. I look forward to work with my team lead and team members to achieve the the program milestone. Expecting best possible feedback.
+
+
+
+OND() ::::::::::::::::::
+
+Delivery/Perfective Maintenance:
+
+KPP: Troubleshooting as per SLAs
+
+Have been working for different programs and have provided delivery on time during the CV runs and ensured there is no delay in providing the reports. 
+Provided the customer with the necessary logs needed for debug purpose.
+
+Category/KPP
+Operations/Status reporting:
+
+KPP Description
+Timely and accurate and comprehensive/ ‘highlighting risks’
+Appraisee Remarks
+Always completed the work within the SLA . Further actively monitoring CV runs and regularly updating the Jira ticket with necessary information. 
+Providing the accurate analysis of the failure and assigning Jira to further teams to take necessary actions.
+
+Quality/Deliver on time:
+
+KPP Description
+Schedule adherence/SLA adherence of module or WBS element
+Appraisee Remarks
+Providing accurate debug analysis by root causing the issue and also providing the solution to the environment/test script issues. 
+Working efficiently within the working hours and also extending the support based on requirements. 
+Fixing the build time out issues by monitoring the Jenkin job changes to reduce Conval noise. 
+Working as per timeline for DP project as we have CV runs and making sure the machines are available before CV is triggered, and also made sure the CV is completed on time across different products and sending reports ,completing the triage on time. Based on the CV runs ,triaging the failures and analyzing the failure whether its is test script / setup issue and file a presighting as per the process defined. 
+working on the build release engineering for the creation of FW releases.
+
+
+Category/KPP
+Operations/Process Adherence:
+
+KPP Description
+Compliant to the defined process norms
+Appraisee Remarks
+Worked always being complaint with the norms, and provided the best possible output while complying to the norms provided within HCL as well as the Client. 
+I am supporting for stakeholder's request while extending working hours and completing the task. Based on the CV runs , triaging the failures and analyzing the failure whether its is Node Failure/ New Failure and based on a type of failure creating a story or file a Pre-sighting as per the process defined.
+
+
+Category/KPP
+Customer/Customer Delight and Satisfaction:
+
+KPP Description
+To ensure effective & timely solution to employees and ensure 0% SLA violation
+Appraisee Remarks
+Have been working for different customers and have provided delivery on time during the CV runs and ensured there is no delay in providing the reports and also without violating the SLA Communicating with onsite co-ordinator/team to clarify the questions for suggestions to move for further debug purpose. 
+Provided the customer with the necessary logs needed for their debug purpose immediately and made sure there is no delay in providing them the required data within time. Have started working on Build release engg in the creation of firmware releases. 
+No defects found/escalations with reference to the provided solutions to the bug till date.
+
+
+Category/KPP
+Operations/Adherence to Standards:
+
+KPP Description
+Timely deliveries/Adherence to SLA
+Appraisee Remarks
+1.Updating the triage report status with in the SLA. 2.Providing initial analysis and updating the jira with in SLA after assigning the jira.
+
+Category/KPP
+Operations/Solutioning:
+
+KPP Description
+Provide effective solutions for continuous improvement during implementation and production support
+Appraisee Remarks
+1.Took ownership of triage report, sending status report by completing the work within stipulated time. 
+2.Dispositioning environmental jiras on timely basis with accurate justification. 
+3.Maintaining the clients in healthy status on regular basis with the help of pool health report. 
+4.I have involved in debugging skills, Jenkins jobs and configurations and also collaborated with the team on updating the any blocker issues during the CV runs.
+
+
+
+
+
+
+
+JAS():::::::::::::::::::::::::
+
+
+Category/KPP
+Operations/Solutioning
+
+
+Score
+9
+
+KPP Description
+Provide effective solutions for continuous improvement during implementation and production support
+Appraisee Remarks
+1.Took ownership of triage report, sending status report by completing the work within stipulated time. 2.Dispositioning environmental jiras on timely basis with accurate justification. 3.Maintaining the clients in healthy status on regular basis with the help of pool health report. 4.I have involved in debugging skills, Jenkins jobs and configurations and also collaborated with the team on updating the any blocker issues during the CV runs.
+
+Appraiser Remark
+Agreed.
+
+Category/KPP
+Operations/Adherence to Standards
+
+Score
+8
+
+KPP Description
+Timely deliveries/Adherence to SLA
+Appraisee Remarks
+1.Updating the triage report status with in the SLA. 2.Providing initial analysis and updating the jira with in SLA after assigning the jira.
+
+Appraiser Remark
+Agreed. Expecting more on Debug areas.
+
+Category/KPP
+Delivery/Perfective Maintenance:
+Score
+8Achievement
+100 %
+
+KPP Description
+Troubleshooting as per SLAs
+Appraisee Remarks
+1.Have been working for different programs and have provided delivery on time during the CV runs and ensured there is no delay in providing the reports.
+2.Provided the customer with the necessary logs needed for debug purpose.
+
+Appraiser Remark
+Agreed. Need improvement on taking complete ownership for the assigned tasks.
+
+Category/KPP
+Operations/Status reporting:
+Score
+7
+KPP Description
+Timely and accurate and comprehensive/ ‘highlighting risks’
+Appraisee Remarks
+1.Always completed the work within the SLA. 
+2.Further actively monitoring CV runs and regularly updating the Jira ticket with necessary information. 
+3.I have take more responsibilities on the Jenkins execution and took the Jenkins related new CSDP_MR6 branch task independently and working on it.
+
+Appraiser Remark
+Agreed. Need to be more independent on Jenkins side issues for resolving it.
+
+
+
+Category/KPP
+Delivery/Quality of Delivery:
+Score
+9
+KPP Description
+% of delivery first time right/ Defect removal Effectiveness %
+Appraisee Remarks
+1.Sending Triage Report status by Triaging/Creating the jira's for failures to stakeholders and no defect /escalation was done on it. 
+2.Took the ownership of drive recovery and recovering the drives on regular basis. 3.Helpful to team on infra work on request/regular basis.
+
+
+
+Category/KPP
+Operations/Process Adherence:
+Score
+8
+KPP Description
+Compliant to the defined process norms
+Appraisee Remarks
+1. Helped the team by fixing host issues and by recovering the drives on regular basis. 
+2. Updated hosts with FW and LS before triggering the conval. And also triaged the failures. 
+3. Sending the status report to stake holders by triaging the Jenkins & windows failures CSDP programs. 
+4. Sending pool health report on daily basis to maintain healthy clients to avoid environmental issues. 
+5. Collected the hardware inventory for CSDP programs.
+
+
+Category/KPP
+Delivery/Application Enhancement:
+Score
+7
+KPP Description
+Adherence to SLA
+Appraisee Remarks
+1.Whenever need basis Updated hosts with FW and LS before triggering the windows security conval. 
+2.After I triggered the windows security conval, actively monitoring CV runs and updated the Jira with necessary information. 
+3.Gained the knowledge on Jenkin's jobs and also delivering the tasks independently on time.
+
+Appraiser Remark
+Expecting to be involved more in Jenkins flow and debug process.
+
+Overall Remarks
+Appraisee Remarks
+I am happy to work with DP team which is helpful to improve my technical and Debugging skills.
+
+Appraiser Remarks
+Agreed. Chennai has done good job in taking care of Infra and execution. Need to improve on Jenkins flow and debug tasks. Expecting to take complete responsibilities for the assigned tasks.
+
+----------------------------------
+==================================== AMJ-2023
+
+
+1.Customer/Achieve higher customer satisfaction
+
+KPP Description
+
+Feedback from customer on scale of 1 to 5/ CSI Score linked
+
+Appraisee Remark
+
+Zero escalations from stake holders with reference to the provided solutions to the bug till date. Working as per timeline for DP project as we have regular CV runs and making sure the machines are available before CV is triggered, 
+and also made sure the CV is completed on time across different products and sending reports ,completing the triage on time. 
+And have been extending the billed hours when needed and making sure to complete the work on time.
+
+Category/KPP
+
+2.Customer/Asset Management
+
+KPP Description
+
+Handles all Intel Infrastructure with Safety measures.
+
+Appraisee Remark
+
+Based on the CV runs , we are ensuring the lab infrastructure is proper and handling it with the safety measures. 
+If there is any issue exists with infrastructure setup , we physically check the issue and resolve it as soon as possible. 
+I understand the value of communication with my team. 
+we will work on drive recovery process and inventory process to check all SUT and hardwares are proper. 
+I am working on pool health recovery job and sending reports daily to updating the infrastructure status to the team. 
+Supporting infra related works for PV Security Team.
+
+Category/KPP
+
+3.Operations/Response time or SLA
+
+ KPP Description
+
+Timely deliveries/Adherence to SLA
+
+Appraisee Remark
+
+Working efficiently within the working hours and also extending the support based on requirements. 
+Always completed the work within the SLA . 
+Further actively monitoring CV runs including windows Conval and Jenkins and regularly Sending the triage report on time. 
+For every run made sure to update the wiki on a regular basis so there is no mismatch with the CV data . 
+Timely and accurate reporting punctuality is key parameter to live a discipline life.
+
+Category/KPP
+
+4.Delivery/Self-development
+
+KPP Description
+
+Self Development: Increase the domain and technology knowledge 1.Training attended, 2.New skills learned, 3.Existing skills upgraded, 4.Soft skills improvement 5. Effective communication
+
+Appraisee Remark
+
+Completing the Intel and HCL mandatory courses on time without any delay. 
+Have attended the JBC's python training. 
+Currently I'm learning the Basic python implementation and also attending the Devops courses in Percipio training. 
+On daily basis we had sync-up calls and communicating the team effectively.
+
+Category/KPP
+
+5.Delivery/Value Creation(In Value Portal - in $ terms of accepted ideas implemented)
+
+KPP Description
+
+"Innovation - new idea or suggestion ( development process / technology / product feature) Explore opportunities for additional business at customer end. Corporate events : Interviews, Team-events, committees, forums"
+
+Appraisee Remark
+
+Started learning Jenkins Implementation . 
+Based on the Information that I have learnt are Drive Prepping and booting up the drives for the new Optane product. 
+Based on the Knowledge gained I could work effectively on triaging the failures, and updating the same in the wiki and creating the sighting /story for the new failures and updating the comments in the Jira. Providing accurate debug analysis by root causing the issue and also providing the solution to the environment/test script issues Continuously monitoring the CV runs and analyzing the failures to check whether it is node failure/new failure and also sending the status report.
+
+Category/KPP
+
+6.Delivery/Application Enhancement
+
+KPP Description
+
+To enhance the automation accuracy and minimize the automation tool dependancy.
+
+Appraisee Remark
+
+1. Helped the team by fixing host issues and by recovering the drives on regular basis. 
+2. Updated hosts with FW and LS before triggering the conval. And also triaged the failures. 
+3. Sending the status report to stake holders by triaging the Jenkins & windows failures CSDP programs. 
+4. Sending pool health report on daily basis to maintain healthy clients to avoid environmental issues. 
+5. Collected the hardware inventory for CSDP programs. 6. Attending all the trainings and completing on time. 
+7. Ensuring the Infra setup is proper before every conval run 8. Supporting for PV if any requirement is needed.
+
+Category/KPP
+
+7.Delivery/Status reporting
+
+ KPP Description
+
+Timely, accurate and comprehensive
+
+Appraisee Remark
+
+Regularly Monitoring the CV runs so that we can analyze the failures easily and triaging it , 
+updating the respective wiki pages and sending the status report without any delay. 
+I frequently challenge myself to perform better. 
+Providing accurate debug analysis by root causing the issue and also providing the solution to the environment/test script issues.
+
+Category/KPP
+
+8.Delivery/Dependable delivery
+
+KPP Description
+
+% of delivery first time right
+
+Appraisee Remark
+
+Working as per timeline for DP project as we have regular CV runs and making sure the machines are available before CV is triggered .
+Started learning Jenkins Implementation . 
+Based on the Information that I have learnt are Drive Prepping and booting up the drives for the new Optane product .
+For every run made sure to update the wiki on a regular basis so there is no mismatch with the CV data . 
+Timely and accurate reporting punctuality is key parameter to live a discipline life. 
+Providing accurate debug analysis by root causing the issue and also providing the solution to the environment/test script issues. 
+Attending all the trainings and completing on time. Ensuring the Infra setup is proper before every conval run.
+
+Overall Remarks
+
+Appraisee Remarks
+
+I have started working for DP project and make sure everything is completed on time.
+I have tried my best to complete the CV runs by triaging and analyzing the issues on time and sending the status report to the team on time without delay from our end. 
+Daily checking the pool Health report to ensuring the all Infra is proper. Updating the respective wiki pages and sending the status report without any delay.  
+If there is any issue exists with infrastructure setup , we physically check the issue and resolve it as soon as possible. 
+I understand the value of communication with my team.  
+we will work on drive recovery process and inventory process to check all SUT and hardwares are proper.Completing the Intel and HCL mandatory courses on time without any delay and attending the percipo trainings. 
+I frequently challenge myself to perform better. Looking forward to work with my team members.
+
+
+Github clone:
+
+Two ways to clone the repo
+First way:
+Go to https://github.com/ --> click on profile icon ---> go to settings--> go to drop down
+
+Click on developer settings--> click on personal access tokens-- Generate new token --> give name , expiration date, click checkbox on repos , write packages--> click on generate token
+
+Save the token in the notepad/sticky notes
+
+Click on configure SSO -- authenticate to inter inner source
+
+Open the repo url for eg: https://github.com/intel-innersource/firmware.storage.optane.ise.jenkins-utils
+
+Click on code--> copy the https url
+Create local folder on desktop--> right click on that folder --> click gitbash here--> 
+Git clone paste the <url link>
+Ask for authentication-- give username: dprudhix
+password : paste the token value
+
+Throws any error like this follow the below steps:
+
+
+Open windows powershell--> Run as administrator--> give the particular command <git config --system core.longpaths true>
+
+
+Clone the repo successfully 
+
+
+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
+
+https://github.com/dchennax423/GitHub1.git
+
+
+
+Second Way: Clone via dt setup
+
+Go to https://1source.intel.com/onboard
+
+Download devtool from the above link
+Once downloaded --> open the command prompt -- execute the command <.\Downloads\dt.exe install> ---> close the command prompt
+
+Open a new command prompt--> execute the command<dt setup>
+
+Microsoft Windows [Version 10.0.19044.2006]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\dprudhix>dt setup
+ ====> Git Proxy configuration
+? Allow devtool to manage your github proxy settings in the .gitconfig file? Yes
+? Your Intel email: [? for help] (devisrix.prudhive@intel.com)
+
+? Your Intel email: devisrix.prudhive@intel.com
+Checking GitHub account status...
+Your GitHub account is properly configured
+Git already installed - skipping
+git proxy setting for github.com updated to http://proxy-iind.intel.com:912
+ ====> Git Configuration
+? Your full name: [? for help] (dprudhix)
+
+? Your full name: dprudhix
+Your email address: devisrix.prudhive@intel.com
+Git settings successfully configured
+ ====> Github token creation
+? Choose a Git token storage type: netrc
+
+The next step will create an authentication token for GitHub and
+store it in C:\Users\dprudhix\_netrc.
+
+Before proceeding, please open the browser of your laptop to
+https://github.com and login with your GitHub account that you
+wish to use for Intel development. Make sure to use incognito
+tab if this is generic account
+
+Once you have successfully logged in to your GitHub account,
+press <Enter> to continue:
+
+Using the same browser from the previous step, please visit the
+following URL and enter the one-time security code:
+
+    URL: https://github.com/login/device
+    One-time code: 01D4-17D1
+
+Waiting for you to complete the authorization on the website above...
+Successfully configured Github oauth token
+
+Checking workstation configuration...
+Version: 2.0.460 (538d272)
+Latest version: 2.0.460
+Build Time: Wed, 21 Sep 2022 17:15:35 -0700
+Compiled for: windows
+USERPROFILE directory: C:\Users\dprudhix
+devtool path: C:\Users\dprudhix\bin\dt.exe
+IP Address: 10.253.157.51
+Operating system: Windows 10 Enterprise
+Log: C:\Users\dprudhix\.config\dt\dt.log
+Config: C:\Users\dprudhix\.config\dt\config.toml
+User Extensions: C:\Users\dprudhix\.config\dt\extensions
+System Extensions: C:\Users\dprudhix\bin\.dt-extensions
+Migrations: C:\Users\dprudhix\.config\dt\migrations
+Intel email: devisrix.prudhive@intel.com
+GitHub onboard completed: yes
+====== Checking tools ======
+Git installed: yes
+Git version: 2.14.3.windows.1
+====== Git configuration ======
+Git user.name: dprudhix
+Git user.email: devisrix.prudhive@intel.com
+====== Proxy configuration ======
+Autoproxy feature enabled: yes
+On Intel network: yes
+Current autoproxy value: http://proxy-iind.intel.com:912
+Manage .gitconfig github proxies: yes
+====== Proxy environment variables ======
+HTTPS_PROXY:
+NO_PROXY:
+HTTPS_PROXY env has not been configured yet
+====== Proxy Git configuration ======
+github.com proxy value: http://proxy-iind.intel.com:912
+lfs.github.com proxy value: http://proxy-iind.intel.com:912
+github-cloud.s3.amazonaws.com proxy value: http://proxy-iind.intel.com:912
+github-cloud.githubusercontent.com proxy value: http://proxy-iind.intel.com:912
+You have http.proxy=https://proxy-dmz.intel.com:912 configured in file:C:/Users/dprudhix/.gitconfig which may lead to unexpected behaviour
+====== Github authentication ======
+Github token storage type: netrc
+Github oauth token configured: yes
+Github oauth token uses new GitHub format: yes
+Github authentication: successful
+Github username: dprudhix
+====== Checking GitHub Innersource Access ======
+Employee Type: green-badge
+Contingent worker (GB) access is based on a need-to-know basis.
+Visit https://1source.intel.com/inventory/explore to see the AGS entitlements for repos you need access to
+
+C:\Users\dprudhix>
+
+
+
+above log will come --> verify the details and click enter--> open the url <URL: https://github.com/login/device> authenticate the login 
+
+
+Now clone the repo it will not ask for any authentication it will clone the repo successfully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
