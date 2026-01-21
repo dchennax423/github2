@@ -1,7 +1,11 @@
 any new dummy branch creation:
 
 download the ent_ssd repo and give the git pull and give the command : git checkout -b test/auto_triage
-                                                                     |---> whatever u need 
+                                                                     
+
+|---> whatever u need 
+
+|---> whatever u need 
 
 
 
