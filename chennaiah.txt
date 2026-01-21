@@ -3919,6 +3919,18 @@ C:\Users\dprudhix>dt setup
 ? Allow devtool to manage your github proxy settings in the .gitconfig file? Yes
 ? Your Intel email: [? for help] (devisrix.prudhive@intel.com)
 
+C:\Users\dprudhix>dt setup
+ ====> Git Proxy configuration
+? Allow devtool to manage your github proxy settings in the .gitconfig file? Yes
+? Your Intel email: [? for help] (devisrix.prudhive@intel.com)
+
+C:\Users\dprudhix>dt setup
+ ====> Git Proxy configuration
+? Allow devtool to manage your github proxy settings in the .gitconfig file? Yes
+? Your Intel email: [? for help] (devisrix.prudhive@intel.com)
+
+
+
 ? Your Intel email: devisrix.prudhive@intel.com
 Checking GitHub account status...
 Your GitHub account is properly configured
