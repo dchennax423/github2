@@ -33,10 +33,11 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                echo 'Stage: Run Tests'
+                echo 'Stage: Run Tests (pytest)'
                 sh '''
                     . venv/bin/activate
-                    python -m unittest discover -s tests
+                    pytest -v
+                   # python -m unittest discover -s tests
                 '''
             }
         }
