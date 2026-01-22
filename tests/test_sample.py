@@ -1,8 +1,2 @@
-import unittest
-
-class TestSample(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(2+2, 4)
-
-if __name__ == "__main__":
-    unittest.main()
+def test_addition():
+    assert 2 + 3 == 5  # ok
