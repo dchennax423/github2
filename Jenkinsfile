@@ -6,17 +6,27 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Stage: Checkout'
-                git url: 'https://github.com/dchennax423/github2.git', branch: 'master'
+                git 'https://github.com/dchennax423/github2.git'
             }
         }
 
-        stage('Setup Python Virtual Env') {
+        stage('Setup Python venv') {
             steps {
                 echo 'Stage: Setup Python venv'
                 sh '''
-                python3 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                '''
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                echo 'Stage: Install Dependencies'
+                sh '''
+                    . venv/bin/activate
+                    pip install -r requirements.txt
                 '''
             }
         }
@@ -25,17 +35,14 @@ pipeline {
             steps {
                 echo 'Stage: Run Tests'
                 sh '''
-                . venv/bin/activate
-                python3 -m unittest discover -s tests
+                    . venv/bin/activate
+                    python -m unittest discover -s tests
                 '''
             }
         }
     }
 
     post {
-        always {
-            echo 'Build Finished'
-        }
         success {
             echo '✅ All Tests Passed'
         }
