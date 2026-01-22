@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 echo 'Stage: Checkout'
@@ -9,19 +10,24 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Setup Python Virtual Env') {
             steps {
-                echo 'Stage: Install Dependencies'
-                // Python dependencies install cheyyadam (requirements.txt optional)
-                sh 'pip install -r requirements.txt || true'
+                echo 'Stage: Setup Python venv'
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Stage: Run Tests'
-                // Python test cases run cheyyadam
-                sh 'python -m unittest discover -s tests'
+                sh '''
+                . venv/bin/activate
+                python3 -m unittest discover -s tests
+                '''
             }
         }
     }
