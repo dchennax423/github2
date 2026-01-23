@@ -1,0 +1,3 @@
+git add Jenkinsfile-nightly
+git commit -m "Add nightly Jenkinsfile for slow tests"
+git push
