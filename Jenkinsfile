@@ -5,39 +5,47 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Stage: Checkout'
+                echo '📥 Checkout Code'
                 git 'https://github.com/dchennax423/github2.git'
             }
         }
 
         stage('Setup Python venv') {
             steps {
-                echo 'Stage: Setup Python venv'
                 sh '''
-                    python3 -m venv venv
-                    . venv/bin/activate
-                    pip install --upgrade pip
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
                 '''
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                echo 'Stage: Install Dependencies'
                 sh '''
-                    . venv/bin/activate
-                    pip install -r requirements.txt
+                . venv/bin/activate
+                pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Run Tests') {
+        stage('Unit Tests') {
             steps {
-                echo 'Stage: Run Tests (pytest)'
                 sh '''
-                    . venv/bin/activate
-                    pytest -v
-                   # python -m unittest discover -s tests
+                . venv/bin/activate
+                pytest -v -m "not slow"
+                '''
+            }
+        }
+
+        stage('Long Running Tests') {
+            options {
+                timeout(time: 40, unit: 'SECONDS')
+            }
+            steps {
+                sh '''
+                . venv/bin/activate
+                pytest -v -m slow
                 '''
             }
         }
@@ -45,10 +53,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ All Tests Passed'
+            echo '✅ BUILD SUCCESS'
         }
         failure {
-            echo '❌ Some Tests Failed'
+            echo '❌ BUILD FAILED'
         }
     }
 }
