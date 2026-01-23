@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+
+    triggers {
+        cron('H 1 * * *')   // daily 1 AM
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/dchennax423/github2.git'
+            }
+        }
+
+        stage('Setup Python') {
+            steps {
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Nightly Long Tests') {
+            options {
+                timeout(time: 30, unit: 'MINUTES')
+            }
+            steps {
+                sh '''
+                . venv/bin/activate
+                pytest -v -m slow
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Nightly tests passed"
+        }
+        failure {
+            echo "❌ Nightly tests failed"
+        }
+    }
+}
