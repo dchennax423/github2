@@ -1,0 +1,12 @@
+import time
+
+def add(a, b):
+    return a + b
+
+def slow_add(a, b):
+    time.sleep(5)
+    return a + b
+
+def heavy_process():
+    time.sleep(10)
+    return True

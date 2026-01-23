@@ -1,0 +1,10 @@
+import pytest
+from app.calculator import slow_add, heavy_process
+
+@pytest.mark.slow
+def test_slow_add():
+    assert slow_add(10, 20) == 30
+
+@pytest.mark.slow
+def test_heavy_process():
+    assert heavy_process() is True
