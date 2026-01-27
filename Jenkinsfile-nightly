@@ -2,14 +2,13 @@ pipeline {
     agent any
 
     triggers {
-        // Nightly job at 1 AM
-        cron('H 1 * * *')
+        cron('H 1 * * *')   // Daily 1 AM
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/dchennax423/github2.git'
+                checkout scm
             }
         }
 
@@ -18,15 +17,6 @@ pipeline {
                 sh '''
                 python3 -m venv venv
                 . venv/bin/activate
-                pip install --upgrade pip
-                '''
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                . venv/bin/activate
                 pip install -r requirements.txt
                 '''
             }
@@ -34,21 +24,31 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                sh '. venv/bin/activate && pytest -v -m "not slow"'
+                sh '''
+                . venv/bin/activate
+                pytest -m "not slow"
+                '''
             }
         }
 
         stage('Long Running Tests') {
-            steps {
-                timeout(time: 60, unit: 'MINUTES') {
-                    sh '. venv/bin/activate && pytest -v -m slow'
+            timeout(time: 1, unit: 'HOURS') {
+                steps {
+                    sh '''
+                    . venv/bin/activate
+                    pytest -m slow
+                    '''
                 }
             }
         }
     }
 
     post {
-        success { echo "✅ NIGHTLY BUILD SUCCESS" }
-        failure { echo "❌ NIGHTLY BUILD FAILED" }
+        success {
+            echo "✅ NIGHTLY BUILD SUCCESS"
+        }
+        failure {
+            echo "❌ NIGHTLY BUILD FAILED"
+        }
     }
 }
