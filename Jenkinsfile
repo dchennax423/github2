@@ -3,9 +3,8 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                echo '📥 Checkout Code'
                 git 'https://github.com/dchennax423/github2.git'
             }
         }
@@ -29,7 +28,7 @@ pipeline {
             }
         }
 
-        stage('Unit Tests') {
+        stage('Run Unit Tests') {
             steps {
                 sh '''
                 . venv/bin/activate
@@ -38,9 +37,9 @@ pipeline {
             }
         }
 
-        stage('Long Running Tests') {
-            options {
-                timeout(time: 40, unit: 'SECONDS')
+        stage('Run Long Tests (Nightly)') {
+            when {
+                expression { env.BUILD_CAUSE == 'TIMERTRIGGER' }
             }
             steps {
                 sh '''
