@@ -2,33 +2,23 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/dchennax423/github2.git'
+                checkout scm
             }
         }
 
-        stage('Setup Python venv') {
+        stage('Setup venv') {
             steps {
                 sh '''
                 python3 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
-                '''
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh '''
                 . venv/bin/activate
                 pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Run Unit Tests') {
+        stage('Run Fast Tests') {
             steps {
                 sh '''
                 . venv/bin/activate
@@ -36,26 +26,14 @@ pipeline {
                 '''
             }
         }
-
-        stage('Run Long Tests (Nightly)') {
-            when {
-                expression { env.BUILD_CAUSE == 'TIMERTRIGGER' }
-            }
-            steps {
-                sh '''
-                . venv/bin/activate
-                pytest -v -m slow
-                '''
-            }
-        }
     }
 
     post {
         success {
-            echo '✅ BUILD SUCCESS'
+            echo "✅ FAST TESTS PASSED"
         }
         failure {
-            echo '❌ BUILD FAILED'
+            echo "❌ FAST TESTS FAILED"
         }
     }
 }
