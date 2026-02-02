@@ -5,9 +5,9 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/USERNAME/devops-demo-app.git',
-                    credentialsId: 'github-creds'
+                git branch: 'master',
+                    url: 'https://github.com/dchennax423/github2.git',
+                    credentialsId: 'dchenna423'
             }
         }
 
