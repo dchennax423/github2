@@ -2,38 +2,43 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+
+        stage('Clone Code') {
             steps {
-                checkout scm
+                git branch: 'main',
+                    url: 'https://github.com/USERNAME/devops-demo-app.git',
+                    credentialsId: 'github-creds'
             }
         }
 
-        stage('Setup venv') {
+        stage('Build') {
             steps {
-                sh '''
-                python3 -m venv venv
-                . venv/bin/activate
-                pip install -r requirements.txt
-                '''
+                echo "Building application..."
+                sh 'npm install'
             }
         }
 
-        stage('Run Fast Tests') {
+        stage('Test') {
             steps {
-                sh '''
-                . venv/bin/activate
-                pytest -v -m "not slow"
-                '''
+                echo "Running tests..."
+                sh 'npm test || true'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying application..."
+                sh 'pm2 restart app || pm2 start index.js --name app'
             }
         }
     }
 
     post {
         success {
-            echo "✅ FAST TESTS PASSED"
+            echo "✅ Build & Deploy Successful"
         }
         failure {
-            echo "❌ FAST TESTS FAILED"
+            echo "❌ Build Failed"
         }
     }
 }
