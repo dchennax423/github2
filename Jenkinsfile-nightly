@@ -1,43 +1,19 @@
 pipeline {
     agent any
 
-    environment {
-        VENV_DIR = "venv"
-    }
-
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/dchennax423/github2.git'
+                checkout scm
             }
         }
 
-        stage('Setup Python venv') {
+        stage('Setup venv') {
             steps {
                 sh '''
-                  python3 -m venv venv
-                  . venv/bin/activate
-                  pip install --upgrade pip
-                '''
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                  . venv/bin/activate
-                  pip install -r requirements.txt
-                '''
-            }
-        }
-
-        stage('Run Unit Tests') {
-            steps {
-                sh '''
-                  . venv/bin/activate
-                  pytest -v -m "not slow"
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -46,8 +22,8 @@ pipeline {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                     sh '''
-                      . venv/bin/activate
-                      pytest -v -m slow
+                    . venv/bin/activate
+                    pytest -v -m slow
                     '''
                 }
             }
@@ -56,10 +32,10 @@ pipeline {
 
     post {
         success {
-            echo "✅ NIGHTLY BUILD SUCCESS"
+            echo "🌙 NIGHTLY TESTS PASSED"
         }
         failure {
-            echo "❌ NIGHTLY BUILD FAILED"
+            echo "🚨 NIGHTLY TESTS FAILED"
         }
     }
 }
