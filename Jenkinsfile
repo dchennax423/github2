@@ -3,42 +3,48 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/dchennax423/github2.git',
-                    credentialsId: 'dchenna423'
+                git credentialsId: 'dchenna423',
+                    url: 'https://github.com/dchennax423/github2.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo "Building application..."
                 sh 'npm install'
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                echo 'Running Server Health Check...'
+                sh 'python3 health_check.py'
             }
         }
 
         stage('Test') {
             steps {
-                echo "Running tests..."
-                sh 'npm test || true'
+                sh 'npm test'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying application..."
-                sh 'pm2 restart app || pm2 start index.js --name app'
+                sh '''
+                  pm2 stop app || true
+                  pm2 start index.js --name app
+                '''
             }
         }
     }
 
     post {
         success {
-            echo "✅ Build & Deploy Successful"
+            echo '✅ Build & Deploy Successful'
         }
         failure {
-            echo "❌ Build Failed"
+            echo '❌ Pipeline Failed'
         }
     }
 }
