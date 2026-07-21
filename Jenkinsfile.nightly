@@ -1,0 +1,74 @@
+pipeline {
+    agent any
+
+    // 🔹 Nightly trigger at 1 AM
+    triggers {
+        cron('H 1 * * *')
+    }
+
+    environment {
+        VENV_PATH = "${WORKSPACE}/venv"
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                echo "📥 Checking out code from GitHub"
+                git branch: 'master', url: 'https://github.com/dchennax423/github2.git'
+            }
+        }
+
+        stage('Setup Python Virtual Env') {
+            steps {
+                echo "🐍 Setting up Python virtual environment"
+                sh '''
+                python3 -m venv $VENV_PATH
+                . $VENV_PATH/bin/activate
+                pip install --upgrade pip
+                '''
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                echo "📦 Installing Python dependencies"
+                sh '''
+                . $VENV_PATH/bin/activate
+                pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Run Unit Tests') {
+            steps {
+                echo "✅ Running fast unit tests"
+                sh '''
+                . $VENV_PATH/bin/activate
+                pytest -v -m "not slow"
+                '''
+            }
+        }
+
+        stage('Run Long / Nightly Tests') {
+            steps {
+                echo "⏳ Running long-running / nightly tests"
+                timeout(time: 60, unit: 'MINUTES') {
+                    sh '''
+                    . $VENV_PATH/bin/activate
+                    pytest -v -m slow
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "🎉 NIGHTLY BUILD SUCCESS"
+        }
+        failure {
+            echo "❌ NIGHTLY BUILD FAILED"
+        }
+    }
+}

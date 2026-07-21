@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Setup venv') {
+            steps {
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Long Running Tests') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    sh '''
+                    . venv/bin/activate
+                    pytest -v -m slow
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "🌙 NIGHTLY TESTS PASSED"
+        }
+        failure {
+            echo "🚨 NIGHTLY TESTS FAILED"
+        }
+    }
+}
